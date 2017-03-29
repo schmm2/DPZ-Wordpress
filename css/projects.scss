@@ -1,0 +1,93 @@
+@import "baseClass";
+@import "theme-settings";
+  
+$gutterSize: 1vw;
+$square-one: 18vw;
+
+	
+#projects-bg{
+	background-color: #f2f5f9;
+}
+
+#projects{
+	margin-top: 40px;
+}
+
+.project{
+	cursor: pointer;	
+	
+	.project-content{
+		@include positionCenter(-50%,-50%);
+	
+		.project-title{
+			
+			font-family: $font-oswald;
+			color: white;
+			font-weight: 400;
+			font-size: 6vmin;
+			text-align: center;
+		}
+		
+		.project-text{
+			display: none;
+		}
+		
+		.button-readMore{
+			position: relative;
+			opacity: 0;
+			display: none;
+			top: 30px;
+		}
+	}
+}
+
+
+.gutter-sizer{
+	width: $gutterSize;
+}
+
+.project-small{
+	
+	height: $square-one;
+	width: $square-one;
+	
+	@media screen and (max-width: $break-middle) {
+		height: #{$square-one*2 + $gutterSize} ;
+		width: #{$square-one*2 + $gutterSize} ;
+	}
+	
+	@media screen and (max-width: $break-small) {
+		height: #{$square-one*4 + $gutterSize*3} ;
+		width: #{$square-one*4 + $gutterSize*3} ;
+	}
+}
+
+.project-medium{
+	width: #{$square-one*2 + $gutterSize} ;
+	height: $square-one;
+	
+	@media screen and (max-width: $break-middle) {
+		height: #{$square-one*2 + $gutterSize} ;
+		width: #{$square-one*4 + $gutterSize*3} ;
+	}
+	
+	@media screen and (max-width: $break-small) {
+		height: #{$square-one*4 + $gutterSize*3} ;
+		width: #{$square-one*4 + $gutterSize*3} ;
+	}
+}
+
+.project-huge{
+	width: #{$square-one*2 + $gutterSize} ;
+	height: #{$square-one*2 + $gutterSize} ;
+	
+	@media screen and (max-width: $break-middle) {
+		height: #{$square-one*4 + $gutterSize*3} ;
+		width: #{$square-one*4 + $gutterSize*3} ;
+	}
+	
+	@media screen and (max-width: $break-small) {
+		height: #{$square-one*4 + $gutterSize*3} ;
+		width: #{$square-one*4 + $gutterSize*3} ;
+	}
+}

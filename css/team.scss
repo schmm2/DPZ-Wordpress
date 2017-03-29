@@ -1,0 +1,47 @@
+@import "theme-settings";
+@import "baseClass";
+
+$gutterSize: 1.5vw;
+
+#projects-bg{
+	background-color: #f2f5f9;
+}
+
+#projects{
+	margin-top: 40px;
+}
+
+.project{
+	overflow: hidden;
+	margin-bottom: $gutterSize;
+	
+	.background{
+		height: 100%;
+		@extend %bgCover;
+	}
+	
+	.title{
+		@include positionCenter(-50%,-50%);
+		font-family: $font-oswald;
+		color: white;
+		font-weight: 400;
+		font-size: 4rem;
+		text-align: center;
+	}
+	
+	.text{
+		display: none;
+	}
+}
+
+.grid-column-sizer, .teamMemebr{
+	width: 22.375vw;
+}
+
+.grid-gutter-sizer{
+	width: $gutterSize;	
+}
+
+.teamMember{
+	height: 30vw;
+}

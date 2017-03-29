@@ -1,0 +1,106 @@
+/*
+Theme Name: travelr
+Description: Used to style the TinyMCE editor.
+*/
+
+/**
+ * 1.0 Body & Default
+ * ----------------------------------------------------------------------------
+ */
+
+@import "theme-settings";
+@import "baseClass";
+
+body 
+{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 300;
+	text-decoration: none;
+}
+
+
+html .mceContentBody 
+{  
+    max-width: 1000px;    
+    width: 100%;
+	font-size: 62.5%;
+} 
+
+*
+{
+	padding: 0px;
+	margin: 0px;
+}
+
+table{
+	max-width: 100%;
+}
+
+
+/**
+ * 2.0 Font
+ * Unit needs to be em
+ * ----------------------------------------------------------------------------
+ */
+
+a
+{
+	text-decoration: none;
+	color: blue;
+}
+
+
+p,td
+{
+	font-size: 20px;
+	line-height: 1.3;
+	margin: 0px 0px 10px 0px;
+}
+
+
+h1{
+	font-size: 4em;
+	font-family: $font-oswald;
+	font-weight: 400;
+	margin: 20px 0px 30px 0px;
+	color: $color-text;
+}
+
+
+h2{
+	font-size: 2.5em;
+	font-family: $font-oswald;
+	font-weight: 400;
+	margin: 20px 0px 30px 0px;
+}
+
+h3{
+	font-size: 2.6em;
+	font-family: $font-oswald;
+	font-weight: 400;
+	margin: 20px 0px 30px 0px;
+}
+
+
+
+
+/**
+ * 3.0 Content
+ * ----------------------------------------------------------------------------
+ */
+ 
+ 
+
+/**
+ * 4.0 Tables
+ * ----------------------------------------------------------------------------
+ */
+ 
+td{
+	vertical-align: top;
+}
+
+table{
+	max-width: 100%;
+}
+

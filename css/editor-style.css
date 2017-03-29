@@ -1,0 +1,122 @@
+/*
+Theme Name: travelr
+Description: Used to style the TinyMCE editor.
+*/
+/**
+ * 1.0 Body & Default
+ * ----------------------------------------------------------------------------
+ */
+/***** Media Query *****/
+/***** Color *****/
+.text-info {
+  color: orange !important; }
+
+.text-alert {
+  color: red !important; }
+
+.text-success {
+  color: green !important; }
+
+/***** Font *****/
+h1 {
+  font-size: 4rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 20px 0px 30px 0px;
+  color: #222222; }
+
+h2 {
+  font-size: 2.5rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 20px 0px 30px 0px; }
+
+h3 {
+  font-size: 2.6rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 20px 0px 30px 0px; }
+
+h6 {
+  font-size: 6rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 0px 0px 15px 0px; }
+
+h7 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0px 0px 20px 0px; }
+
+.fa {
+  font-size: 2rem !important; }
+
+.fa-mobile {
+  font-size: 3rem !important; }
+
+/***** Animations *****/
+/***** Style *****/
+/***** Layout *****/
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  text-decoration: none; }
+
+html .mceContentBody {
+  max-width: 1000px;
+  width: 100%;
+  font-size: 62.5%; }
+
+* {
+  padding: 0px;
+  margin: 0px; }
+
+table {
+  max-width: 100%; }
+
+/**
+ * 2.0 Font
+ * Unit needs to be em
+ * ----------------------------------------------------------------------------
+ */
+a {
+  text-decoration: none;
+  color: blue; }
+
+p, td {
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 0px 0px 10px 0px; }
+
+h1 {
+  font-size: 4em;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 20px 0px 30px 0px;
+  color: #222222; }
+
+h2 {
+  font-size: 2.5em;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 20px 0px 30px 0px; }
+
+h3 {
+  font-size: 2.6em;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 20px 0px 30px 0px; }
+
+/**
+ * 3.0 Content
+ * ----------------------------------------------------------------------------
+ */
+/**
+ * 4.0 Tables
+ * ----------------------------------------------------------------------------
+ */
+td {
+  vertical-align: top; }
+
+table {
+  max-width: 100%; }

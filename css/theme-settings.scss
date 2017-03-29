@@ -1,0 +1,87 @@
+
+/***** Media Query *****/
+$break-big:1300px;
+$break-middle:1100px;
+$break-small:600px;
+
+/***** Color *****/
+$color-text: #222222;
+$color-text-bright: #a2a4a6;
+
+$color-greyLight: #f3f7fb;
+$color-greyDark: #C2C4C6;
+
+$resortStudioColor: #990099;
+$resortVideoColor: #8c9999;
+$resortEventColor: #effa0b;
+$resortDropzoneColor: #00e5ff;
+$resortGamingColor: #990000;
+
+$facebook: #3b5998;
+$youtube: #e52d27;
+$rss: #f26522;
+$instagram: #3f729b;
+
+.text-info{
+	color: orange !important;	
+}
+.text-alert{
+	color: red !important;
+}
+.text-success{
+	color: green !important;
+}
+
+/***** Font *****/ 
+$font-oswald: 'Oswald', Arial, sans-serif;
+$font-sourceSansPro: 'Source Sans Pro', Arial, sans-serif;
+
+$font-size-default: 2rem;
+
+h1{
+	font-size: 4rem;
+	font-family: $font-oswald;
+	font-weight: 400;
+	margin: 20px 0px 30px 0px;
+	color: $color-text;
+}
+
+
+h2{
+	font-size: 2.7rem;
+	font-family: $font-oswald;
+	font-weight: 400;
+	margin: 40px 0px 30px 0px;
+}
+
+h3{
+	font-size: 2.5rem;
+	font-family: $font-oswald;
+	font-weight: 400;
+	margin: 40px 0px 30px 0px;
+}
+
+h6
+{
+	font-size: 6rem;
+	font-family: $font-oswald;
+	font-weight: 400;
+	margin: 0px 0px 15px 0px;
+}
+
+h7
+{
+	font-size: 3rem;
+	font-weight: 300;
+	margin: 0px 0px 20px 0px;
+}
+
+.fa
+{
+	font-size: 2rem !important;
+}
+
+.fa-mobile
+{
+	font-size: 3rem !important;
+}

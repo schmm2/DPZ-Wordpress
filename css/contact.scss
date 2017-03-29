@@ -1,0 +1,189 @@
+@import "baseClass";
+@import "theme-settings";
+
+
+/***** Contact *****/
+
+#contact{
+	
+	@extend %flexbox;
+	@extend %justifyContent-spaceBetween;
+	@extend %flexAlign-center;
+	
+	flex-wrap: nowrap;
+	
+	input, textarea{
+		padding: 15px;
+	}
+	
+	> div {
+		flex-basis: 0;
+	}
+	
+	@media screen and (max-width: $break-small) {
+		flex-wrap: wrap;
+		
+		> div {
+			flex-basis: auto;
+		}
+	}
+		
+	
+		
+	#contact-text{
+		padding-right: 10vw;
+		margin-bottom: 4vh;
+		
+		@include flex-grow(2);
+
+		@media screen and (max-width: $break-small) {
+			padding-right: 0px;
+		}	
+	}
+		
+	#contact-teamMember{
+		
+		@include flex-grow(1);
+		 
+		#teamMember-image img{
+			max-width: 100%;
+			width: 100%;
+			-webkit-filter: grayscale(100%);
+		}
+		
+		#teamMember-contactInformation{
+			@extend %flexbox;
+			a{
+				margin: 20px 20px 0px 0px;
+				border: solid 1px #383739;
+				width: 50px;
+				height: 50px;
+				
+				@include transition-property(background-color, border);
+				@include transition-duration(0.2s);
+				
+				position: relative;
+				
+				i{
+					@include positionCenter(-50%,-50%);
+					font-size: 2.7rem !important;
+					color: #383739;
+					
+					@include transition-property(color);
+					@include transition-duration(0.2s);
+				}
+				
+				&:hover{
+					
+					@include transition-property(background-color, border);
+					@include transition-duration(0.2s);
+					
+					i{
+						color: white;
+						
+						@include transition-property(color);
+						@include transition-duration(0.2s);
+					}
+				}
+			}
+		}
+	}	
+}
+
+#map{
+	height: 60vh;
+	width: 100%;
+}
+
+/***** Contact Form *****/
+			
+#contactForm-bg{
+	
+	background-color: $color-greyLight;
+}
+	
+.contactForm{
+
+	@extend %flexbox;
+	input, textarea{
+		&:focus{
+			-webkit-box-shadow: inset 2px 2px 7px -2px rgba(186,188,190,0.45);
+			-moz-box-shadow: inset 2px 2px 7px -2px rgba(186,188,190,0.45);
+			box-shadow: inset 2px 2px 7px -2px rgba(186,188,190,0.45);
+		}
+	}
+	
+	@media screen and (max-width: $break-middle ) {
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}
+			
+	.contactForm-sender{
+		
+		width: 32%; 
+		margin-right: 8%;
+		display: block;
+		
+		@media screen and (min-width: $break-small) and (max-width: $break-middle) {
+			
+			// extend not work for sass
+			display: flex;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: -webkit-flex;
+			
+			-webkit-justify-content: space-between;
+			   -moz-justify-content: space-between;
+				-ms-justify-content: space-between;
+					justify-content: space-between;
+			
+			width: 100%;
+		}	
+		
+		@media screen and (max-width: $break-small) {
+			width: 100%;
+			margin-right: 0%;
+		}
+				
+		> div{
+			width: 100%;
+			
+			@media screen and (min-width: $break-small) and (max-width: $break-middle) {
+				width: 30%;
+			}			
+							
+			input{
+				width: 100%;
+				height: 40px;
+				border: none;
+				
+			}
+		}		
+	}
+	
+	.contactForm-message{
+		width: 60%; 
+		
+		textarea{				  
+			height: 180px;
+			border: none;
+		}
+		
+		@media screen and (max-width: $break-middle) {
+			width: 100%;
+		}
+		
+		input[type="submit"]{ 
+			
+			background-color: transparent;
+			border: 1px solid $color-text;
+							
+			&:hover{
+				color: white;
+			}
+			
+			float: right;
+			margin-top: 20px;
+		}
+	}
+}
