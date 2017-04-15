@@ -1,0 +1,203 @@
+@import "baseClass";
+@import "theme-settings";
+
+#footer{
+
+	a, h3, p {
+		color: white;
+	}
+
+	#socialLinks li{
+		a{
+			border-color: white;
+			color: white;
+		}
+	}
+		
+	.contactForm{
+		input, textarea{
+			background-color: rgba(255,255,255,0.1);
+			color: white;
+		}
+	}
+	
+	#footer-content{
+					
+		@extend %flexbox;
+		@extend %justifyContent-spaceBetween;
+		
+		@media screen and (max-width: $break-small) {
+			flex-wrap: wrap;
+		}
+		
+		> div {
+			@include flex-basis(0);
+		}
+		
+		#sites{
+			
+			@include flex-grow(1);
+			li{
+				list-style: none;
+				margin-bottom: 20px;
+			}
+			
+			@media screen and (max-width: $break-small) {
+				@include flex-basis(50%);
+			}
+		}
+		
+		#socialMedia{
+			@include flex-grow(1);
+			
+			@media screen and (max-width: $break-small) {
+				@include flex-basis(50%);
+			}
+			
+			#socialLinks{
+			
+				ul{
+					@extend %flexbox;
+					@extend %flex-wrap;
+								
+					li{
+						
+						margin-right: 4vmin;
+						margin-bottom: 4vmin;
+															 					
+						a{
+							display: block;
+							
+							@include transition-property(color,background-color,border-color);
+							@include transition-duration(0.2s);
+							
+							
+							height: 50px;
+							width: 50px;
+							
+							border: 1px solid white;
+							cursor: pointer;
+						
+							position: relative;
+							font-family: FontAwesome;
+							
+							&:hover{
+								@include transition-property(color,background-color,border-color);
+								@include transition-duration(0.2s);
+							}
+												
+							&:before{
+								@include positionCenter(-50%,-50%);
+							}
+							
+							// facebook
+							&[href*="facebook.com"]:before {
+								content: "\f09a";
+							}  
+							
+							// twitter
+							&[href*="twitter.com"]:before {
+								content: "\f099";
+							}
+							
+							// youtube
+							&[href*="youtube.com"]:before {
+								content: "\f16a";
+							}
+						
+							// twitch
+							&[href*="twitch.tv"]:before {
+								content: "\f1e8";
+							}			
+							
+							// flickr
+							&[href*="flickr.com"]:before {
+								content: "\f16e";
+							}	
+							
+							// vimeo
+							&[href*="vimeo.com"]:before {
+								content: "\f27d";
+							}	
+						}	
+					}				
+				}	
+			}
+		}
+		
+		#contactForm-container{
+			
+			@include flex-grow(2);
+			
+			@media screen and (max-width: $break-small) {
+				@include flex-basis(100%);  
+				margin-top: 40px;
+			}
+			
+			.contactForm{
+	
+				width: 100%;
+				@extend %flexbox;
+				
+				// column layout
+				@media screen and (max-width: $break-middle) {
+					-webkit-flex-direction: column;
+					flex-direction: column;
+				}	
+				
+				p{
+					margin: 15px 0px 10px 0px;
+				}
+						
+				.contactForm-sender{
+				
+					width: 40%; 
+					margin-right: 10%;
+					display: block;
+							
+					div{
+						width: 100%;
+								
+						input{
+							width: 100%;
+							height: 40px;
+							border: none;
+						}	
+					}
+					
+					// column layout
+					@media screen and (max-width: $break-middle) {
+						width: 100%;
+						margin-right: 0%;
+					}		
+				}
+			
+				.contactForm-message{
+					width: 50%; 
+					
+					// column layout
+					@media screen and (max-width: $break-middle) {
+						width: 100%;
+					}
+					
+					textarea{		
+						border: none;
+						height: 180px;
+					}
+					
+					
+					input[type="submit"]{
+						
+						background-color: transparent;
+						border: 1px solid white;
+						
+						color: white;
+									
+						float: right;
+						margin-top: 20px;
+					}
+				}
+			}
+		}
+	}
+}

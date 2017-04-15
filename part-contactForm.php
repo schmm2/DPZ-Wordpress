@@ -1,27 +1,19 @@
-<p>* Pflichtfelder</p>
-<form class="contactForm" onsubmit="return false;"> 
-	<div class="contactForm-sender">				
-		<div>
-			<p>Dein Name *</p>
-		  	<input class="input-name" type="text"></input>
-		</div>
-		<div>
-			<p>E-Mail-Adresse *</p>
-		    <input class="input-mail" type="email"></input>
-		</div>		
-		<div>
-			<p>Betreff</p>
-			<input class="input-subject" type="text"></input>
-			<div class="message"></div>
-		</div>	
-	</div>		
-	<div class="contactForm-message">
-		<div>
-			<p>Nachricht *</p>
-			<textarea class="input-message"></textarea>
-		</div>
-		<input class="bgColor-main-bright-hover" value="Senden" type="submit" id="form-submit"></input>
-		<div style="clear:both"></div>
-	</div>	
+<form class="contact-form clearfix" onsubmit="return false;">
+
+    <div class="input-group">
+        <input class="input-name" type="text" required>
+        <span class="bar"></span>
+        <label>Name</label>
+    </div>
+    <div class="input-group">
+        <input class="input-mail" type="text" required>
+        <span class="bar"></span>
+        <label>E-Mail-Adresse</label>
+    </div>
+
+    <div class="input-group">
+        <textarea class="input-message" required></textarea>
+        <label>Nachricht</label>
+    </div>
+    <input class="buttonLink" value="Senden" type="submit" id="form-submit" />
 </form>
-<p id="message"></p>

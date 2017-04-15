@@ -1,0 +1,28 @@
+@import "baseClass";
+@import "theme-settings";
+
+#contact {
+
+	@extend %flexbox;
+	@extend %flexDirection-row;
+
+	// extend not work for sass
+	@media screen and (max-width: $break-small) {
+		-webkit-flex-direction: column;
+		flex-direction: column;
+	}
+
+	#contact-form, #contact-text{
+		padding: 7vw 4vw 9vw 4vw;
+		@include flex-basis(50%);
+		@extend %flexbox;
+		@extend %flexDirection-column;
+		@extend %justifyContent-center;
+	}
+
+	/***** Contact Form *****/
+
+	#contact-form {
+		background-color: $color-greyLight;
+	}
+}

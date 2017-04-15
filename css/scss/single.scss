@@ -1,0 +1,35 @@
+@import "baseClass";
+@import "theme-settings";
+  
+#post-navigation{
+	.arrow-back{
+		float: right;
+		
+		width: 50px;
+		height: 50px;
+		
+		border: 1px solid black;	
+		z-index: 100;
+		
+		@include transition-duration(0.2s);
+		@include transition-property(background-color, border);
+		
+		@extend %bgContain;
+		background-size: 30px 30px;
+		@include rotate(180deg);
+		background-image: url('../img/arrow-right-black.png');
+		
+		&:hover{
+			cursor: pointer;
+			border-color: white;
+			background-image: url('../img/arrow-right-white.png');
+		}
+	}
+	
+	&:after { 
+		content: " ";
+		display: block; 
+		height: 0; 
+		clear: both;
+	}
+}

@@ -130,7 +130,19 @@ function dpz_customizer_css() {
     ?>
     <style type="text/css">
         a { color: <?php echo get_theme_mod( 'dpz_link_color' ); ?> ; }
-        
+
+        /* Footer color */
+        #footer{
+            background-color: <?php echo get_theme_mod( 'dpz_footer_color' ); ?>;
+        }
+
+        /* Button Link */
+        .buttonLink:hover{
+            background-color: <?php echo get_theme_mod( 'dpz_buttonLinkHover_color' ); ?> !important;
+            border-color: <?php echo get_theme_mod( 'dpz_buttonLinkHover_color' ); ?> !important;
+            color: white !important;
+        }
+
         /* Main Color */
         .color-main { color: <?php echo get_theme_mod( 'dpz_main_color' ); ?>; }
         .bgColor-main { background-color: <?php echo get_theme_mod( 'dpz_main_color' ); ?>; }
@@ -196,7 +208,43 @@ function dpz_register_theme_customizer( $wp_customize ) {
  
  	/* Colors */	
  	define( 'NO_HEADER_TEXT', true );
- 	
+
+ 	// Footer
+	$wp_customize->add_setting(
+		'dpz_footer_color',
+		array('default'     => '#2a2d2e')
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_color',
+			array(
+				'label'      => __( 'Footer Color', 'dpz' ),
+				'section'    => 'colors',
+				'settings'   => 'dpz_footer_color'
+			)
+		)
+	);
+
+	// Button Links Hover
+	$wp_customize->add_setting(
+		'dpz_buttonLinkHover_color',
+		array('default'     => '#dd3333')
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'buttonLinkHover_color',
+			array(
+				'label'      => __( 'Button Links Hover Color', 'dpz' ),
+				'section'    => 'colors',
+				'settings'   => 'dpz_buttonLinkHover_color'
+			)
+		)
+	);
+
  	// Main
     $wp_customize->add_setting(
         'dpz_main_color',
@@ -334,7 +382,15 @@ function activate_script() {
 	
 	wp_register_style( 'font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" );
 	wp_enqueue_style( 'font-awesome' );
-	 
+
+
+	wp_register_style( 'main', get_template_directory_uri().'/css/main.css' );
+	wp_enqueue_style( 'main' );
+
+	wp_register_style( 'contactform', get_template_directory_uri().'/css/contactform.css' );
+	wp_enqueue_style( 'contactform' );
+
+
 	wp_register_style( 'fonts', get_template_directory_uri().'/css/fonts.css' );
  	wp_enqueue_style( 'fonts' );	 
 	
@@ -345,18 +401,6 @@ function activate_script() {
 		wp_register_script( 'pw-google-maps-api', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', null, null, true );
 		wp_enqueue_script( 'pw-google-maps-api');
 	}
-	
-	if(is_page_template('page-frontpage-department.php')){
-		wp_register_style( 'departmentFrontpage', get_template_directory_uri().'/css/departmentFrontpage.css' );
-	    wp_enqueue_style( 'departmentFrontpage' );
-	    
-	    wp_enqueue_style('departmentFrontpage-dynamicCss', get_stylesheet_directory_uri().'/php/departmentFrontpage-dynamicCss.php');
-	    wp_enqueue_style( 'departmentFrontpage-dynamicCss' );
-		              
-		wp_register_style( 'blendmode-fallback', get_template_directory_uri().'/css/blendmode-fallback.css' );
-		wp_enqueue_style( 'blendmode-fallback' );
-	}
-	
 
 	if(is_page_template('page-projects.php')){
 		wp_register_style( 'projects', get_template_directory_uri().'/css/projects.css' );
@@ -370,9 +414,9 @@ function activate_script() {
 	    
 	    wp_enqueue_script( 'slimScroll', get_template_directory_uri().'/js/jquery.slimscroll.min.js', array( 'jquery'));
 	    
-	    wp_register_style( 'swiper', get_template_directory_uri().'/css/swiper.css' );
+	    wp_register_style( 'swiper', get_template_directory_uri().'/css/swiper.min.css' );
 		wp_enqueue_style( 'swiper' );
-		wp_enqueue_script( 'swiper-js', get_template_directory_uri().'/js/swiper.js', array('jquery'));
+		wp_enqueue_script( 'swiper-js', get_template_directory_uri().'/js/swiper.jquery.min.js', array('jquery'));
 	}
 	
 	if(is_page_template('page-team.php')){
@@ -400,9 +444,9 @@ function activate_script() {
 		wp_enqueue_script( 'froogaloop', get_template_directory_uri().'/js/froogaloop.min.js', array('jquery'));
 		
 		// Slides
-		wp_register_style( 'swiper', get_template_directory_uri().'/css/swiper.css' );
+		wp_register_style( 'swiper', get_template_directory_uri().'/css/swiper.min.css' );
 		wp_enqueue_style( 'swiper' );
-		wp_enqueue_script( 'swiper-js', get_template_directory_uri().'/js/swiper.js', array(), false,true);
+		wp_enqueue_script( 'swiper-js', get_template_directory_uri().'/js/swiper.jquery.min.js', array(), false,true);
 		
 		wp_enqueue_script( 'news', get_template_directory_uri().'/js/news.js');
 	}
@@ -414,7 +458,7 @@ function activate_script() {
 	}	
 	
 	// Footer loaded
-	if(!is_home() && !is_page_template('page-frontpage-department.php')){
+	if(!is_home()){
  		
  		// Contact Form
  		$args = array(
@@ -646,44 +690,6 @@ add_action( 'init', 'offer_post_type', 0 );
 
 
 
-/**
- * Register `department` post type
- */
-function department_post_type() {
-   
-   // Labels
-	$labels = array(
-		'name' => _x("Ressort", "post type general name"),
-		'singular_name' => _x("Ressort", "post type singular name"),
-		'menu_name' => 'Ressorts',
-		'add_new' => _x("Neues Ressort hinzufügen", "team item"),
-		'add_new_item' => __("Neues Ressort hinzufügen"),
-		'edit_item' => __("Ressort bearbeiten"),
-		'new_item' => __("Neues Ressort hinzufügen"),
-		'view_item' => __("Ressort ansehen"),
-		'search_items' => __("Ressort suchen"),
-		'not_found' =>  __("Kein Ressort gefunden"),
-		'not_found_in_trash' => __("Kein Ressort im Papierkorb gefunden"),
-		'parent_item_colon' => ''
-	);
-	
-	// Register post type
-	register_post_type('department' , array(
-		'labels' => $labels,
-		'public' => true,
-		'has_archive' => true,
-		/* icon from wordpress ressource */
-		'menu_icon' => 'dashicons-networking',
-		'rewrite' => false,
-		'supports' => array('title','thumbnail')
-	) );
-}
-
-add_action( 'init', 'department_post_type', 0 );
-
-
-
-
 
 /********** Metaboxes **********/
 
@@ -885,49 +891,6 @@ function register_contact_map_metabox() {
 	) );
 }
 
-
-/**
-* Page 'department Frontpage' metabox
-*/
-
-add_action( 'cmb2_init', 'register_departmentFrontpage_metabox' );
-function register_departmentFrontpage_metabox() {
-
-	// Start with an underscore to hide fields from custom fields list
-	$prefix_departmentFrontpage = '_dpz_departmentFrontpage_';
-	
-	
-	$cmb_departmentFrontpage = new_cmb2_box( array(
-		'id'            => $prefix_departmentFrontpage . 'metabox',
-		'title'         => __( 'Contact Information', 'cmb2' ),
-		'object_types'  => array( 'page'), // Post type
-		'show_on' 		=> array( 'key' => 'page-template', 'value' => 'page-frontpage-department.php' ),		
-	) );
-	
-	
-	$cmb_departmentFrontpage->add_field( array(
-		'name' => __( 'Mail', 'cmb2' ),
-		'desc' => __( 'Mail', 'cmb2' ),
-		'id'   => $prefix_departmentFrontpage . 'mail',
-		'type' => 'text_email',
-	) );
-	
-	
-	$cmb_departmentFrontpage->add_field( array(
-		'name' => __( 'Street', 'cmb2' ),
-		'desc' => __( 'Street', 'cmb2' ),
-		'id'   => $prefix_departmentFrontpage . 'street',
-		'type' => 'text_medium',
-	) );
-	
-	$cmb_departmentFrontpage->add_field( array(
-		'name' => __( 'City', 'cmb2' ),
-		'desc' => __( 'City', 'cmb2' ),
-		'id'   => $prefix_departmentFrontpage . 'city',
-		'type' => 'text_medium',
-	) );
-}
-	
 /**
 * Page Template 'department' metabox
 */
@@ -1070,7 +1033,7 @@ class dpz_socialLink_walker_nav_menu extends Walker_Nav_Menu {
 	    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 	    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 	    // set bgColor-main-bright-hover
-	    $attributes .= ' class="menu-link bgColor-main-dark-hover ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
+	    $attributes .= ' class="menu-link buttonLink ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
 	  
 		// hide link text
 	    $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s</a>%5$s',

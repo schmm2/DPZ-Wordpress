@@ -7,7 +7,7 @@
 			<title><?php bloginfo('name'); ?></title>
 			
 			<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_url'); ?>">						
-			<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/css/img/favicon.jpg" />
+			<link rel="icon" type="image/png" sizes="96x96" href="<?php echo get_stylesheet_directory_uri(); ?>/css/img/favicon-96x96.png" />
 			
 			<meta http-equiv="X-UA-Compatible" content="IE=9">
 		  	<meta charset="utf-8">

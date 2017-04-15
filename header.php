@@ -48,11 +48,9 @@
 		</div>
 		
 		<!-- Site Content -->
-		<div id="site-content">		
-			
-		<?php 
-			
-			if(!is_page_template('page-frontpage-department.php')){ 
-				get_template_part('part','header');  
-			} 
-		?>			
+		<div id="site-content">
+
+            <!-- get Part Header -->
+        <?php
+            get_template_part('part','header');
+        ?>

@@ -1,0 +1,83 @@
+@import "theme-settings";
+
+.contact-form {
+
+  .label {
+    font-size: 2rem;
+    font-weight: normal;
+    color: $color-greyVeryDark;
+  }
+
+  .input-group {
+    position: relative;
+    margin-bottom: 40px;
+
+    input {
+      font-size: 2rem;
+      padding: 10px 10px 10px 0px;
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      border: none;
+      border-bottom: 1px solid $color-greyDark;
+      background-color: transparent;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    label {
+      color: $color-greyVeryDark;
+      font-size: 2rem;
+      font-weight: normal;
+      position: absolute;
+      pointer-events: none;
+      top: 10px;
+      transition: 0.2s ease all;
+    }
+
+    /* active state */
+    input:focus ~ label, input:valid ~ label,
+    textarea:valid ~ label, textarea:focus ~ label {
+      top: -20px;
+      font-size: 1.7rem;
+      color: $color-greyDark;
+    }
+  }
+
+  textarea{
+    background-color: transparent;
+    border: none;
+    border-bottom: solid 1px $color-greyDark;
+    height: 120px;
+    width: 100%;
+    max-width: 600px;
+    resize: vertical;
+    padding-left: 0px;
+  }
+
+  input[type="submit"] {
+    background-color: transparent;
+    border: 1px solid $color-text;
+    color: $color-text;
+    font-weight: 400;
+    font-size: 1.8rem;
+
+    float: right;
+    margin-top: 20px;
+  }
+}
+
+// Design for Footer
+#footer{
+
+  input, textarea{
+    color: white;
+  }
+
+  input[type="submit"] {
+      border: 1px solid white;
+      color: white;
+  }
+}

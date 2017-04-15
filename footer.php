@@ -1,9 +1,9 @@
-			<div id="footer" class="bgColor-main">
+			<div id="footer">
 			
 				<?php 
 				wp_footer(); 
 					
-				if(!is_home() && !is_page_template('page-frontpage-department.php') && !is_search()):?>
+				if(!is_home() && !is_search()):?>
 					
 					<div id='footer-content' class='content-center'>
 						<div id="sites">
@@ -58,17 +58,6 @@
 					</div>
 				<?php endif ?>					
 			</div>
-			
-			<? if(!is_home() && !is_page_template('page-frontpage-department.php') && !is_search()):?>
-				<div id="departmentLink-container">
-					<div id="departmentLink">
-						<h3>Ressorts</h3>
-						<a href="http://<?php echo get_Host(get_site_url()); ?>" id="departmentLink">
-							<div class="icon"></div>
-						</a>
-					</div>
-				</div>
-			<? endif; ?>
 		</div>
 	</body>
 </html>

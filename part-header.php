@@ -44,7 +44,7 @@ else{
 	$src = get_header_image();
 }				
 
-if(!is_page_template('page-projects.php') && !is_front_page() && !is_search() && $src != null):?> 
+if(!is_front_page() && !is_search() && $src != null):?>
 <!-- Header Image -->
 <div id="header-image">
 	<div class="post-shadow">

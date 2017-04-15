@@ -1,0 +1,120 @@
+/***** Animations *****/
+/***** Style *****/
+/***** Layout *****/
+/***** Media Query *****/
+/***** Color *****/
+.text-info {
+  color: orange !important; }
+
+.text-alert {
+  color: red !important; }
+
+.text-success {
+  color: green !important; }
+
+/***** Font *****/
+h1 {
+  font-size: 4rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 20px 0px 30px 0px;
+  color: #222222; }
+
+h2 {
+  font-size: 2.7rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 40px 0px 30px 0px; }
+
+h3 {
+  font-size: 2.5rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 40px 0px 30px 0px; }
+
+h6 {
+  font-size: 6rem;
+  font-family: "Oswald", Arial, sans-serif;
+  font-weight: 400;
+  margin: 0px 0px 15px 0px; }
+
+h7 {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 0px 0px 20px 0px; }
+
+.fa {
+  font-size: 2rem !important; }
+
+.fa-mobile {
+  font-size: 3rem !important; }
+
+#projects-bg {
+  background-color: #f2f5f9; }
+
+#projects {
+  margin-top: 40px; }
+
+.project {
+  cursor: pointer; }
+  .project .project-content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+    .project .project-content .project-title {
+      font-family: "Oswald", Arial, sans-serif;
+      color: white;
+      font-weight: 400;
+      font-size: 6vmin;
+      text-align: center; }
+    .project .project-content .project-text {
+      display: none; }
+    .project .project-content .button-readMore {
+      position: relative;
+      opacity: 0;
+      display: none;
+      top: 30px; }
+
+.gutter-sizer {
+  width: 1vw; }
+
+.project-small {
+  height: 18vw;
+  width: 18vw; }
+  @media screen and (max-width: 1100px) {
+    .project-small {
+      height: 37vw;
+      width: 37vw; } }
+  @media screen and (max-width: 600px) {
+    .project-small {
+      height: 75vw;
+      width: 75vw; } }
+
+.project-medium {
+  width: 37vw;
+  height: 18vw; }
+  @media screen and (max-width: 1100px) {
+    .project-medium {
+      height: 37vw;
+      width: 75vw; } }
+  @media screen and (max-width: 600px) {
+    .project-medium {
+      height: 75vw;
+      width: 75vw; } }
+
+.project-huge {
+  width: 37vw;
+  height: 37vw; }
+  @media screen and (max-width: 1100px) {
+    .project-huge {
+      height: 75vw;
+      width: 75vw; } }
+  @media screen and (max-width: 600px) {
+    .project-huge {
+      height: 75vw;
+      width: 75vw; } }
