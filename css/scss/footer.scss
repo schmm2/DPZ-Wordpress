@@ -46,7 +46,15 @@
 				@include flex-basis(50%);
 			}
 		}
-		
+
+		#adress{
+			@include flex-grow(2);
+
+			@media screen and (max-width: $break-small) {
+				@include flex-basis(100%);
+			}
+		}
+
 		#socialMedia{
 			@include flex-grow(1);
 			

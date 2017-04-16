@@ -2,7 +2,7 @@
 
 <div class="content-center">	
 	<div id="post-navigation">
-		<div class="arrow-back bgBorderColor-second-hover"></div>
+		<div class="arrow-back buttonLink"></div>
 	</div>
 	<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<article>	

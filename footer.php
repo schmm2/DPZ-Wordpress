@@ -7,7 +7,7 @@
 					
 					<div id='footer-content' class='content-center'>
 						<div id="sites">
-							<h3>Sites</h3>
+							<h3>Seiten</h3>
 							<?php 
 								$options =  array(
 								'echo'              => true,
@@ -48,7 +48,20 @@
 								<?php wp_nav_menu($options) ?>				 
 							</div>
 						</div>
-						
+
+                        <div id="adress">
+                            <h3>Addresse</h3>
+                            <p>
+                                dropZone-Productions GmbH</br>
+                                Biembachstrasse 25</br>
+                                3415 Hasle Rüegsau</br>
+                            </p>
+                            <p>
+                                Telefon: 0793162533</br>
+                                E-Mail: info@dropzone-productions.ch
+                            </p>
+                        </div>
+
 						<?php if(!is_page_template('page-contact.php')): ?>
 							<div id="contactForm-container">
 								<h3>Schreib uns!</h3>

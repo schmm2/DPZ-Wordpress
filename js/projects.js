@@ -8,7 +8,6 @@ jQuery(document).ready(function($) {
 			images: '.background-image'
 		});
 	}
-
 	
 	$('.project').on("click", function(){
 		var project_url = $(this).attr('data-project-url');		
@@ -24,21 +23,11 @@ jQuery(document).ready(function($) {
 			Cookies.remove('dpz-project');
 		}
 	} 
-		
-						
+
 	// grid
 	$('#projects').isotope({
 		itemSelector: '.project',
 		packery: {	gutter: '.gutter-sizer'},
 		layoutMode: 'packery'
 	});
-	
-	$('.project').on('mouseenter',function(){
-		$(this).find('.button-readMore').addClass('button-readMore-visible');
-	});
-	
-	$('.project').on('mouseleave',function(){
-		$(this).find('.button-readMore').removeClass('button-readMore-visible');
-	});
-
 });

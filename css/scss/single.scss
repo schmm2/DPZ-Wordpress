@@ -10,6 +10,7 @@
 		
 		border: 1px solid black;	
 		z-index: 100;
+		margin-bottom: 60px;
 		
 		@include transition-duration(0.2s);
 		@include transition-property(background-color, border);
@@ -17,12 +18,12 @@
 		@extend %bgContain;
 		background-size: 30px 30px;
 		@include rotate(180deg);
-		background-image: url('../img/arrow-right-black.png');
+		background-image: url('img/arrow-right-black.png');
 		
 		&:hover{
 			cursor: pointer;
 			border-color: white;
-			background-image: url('../img/arrow-right-white.png');
+			background-image: url('img/arrow-right-white.png');
 		}
 	}
 	

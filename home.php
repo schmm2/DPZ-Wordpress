@@ -1,6 +1,5 @@
 <?php 
-get_header(); 
-require_once 'php/post-bg-helper.php';
+get_header();
 ?>
 
 <div id="news-container" class="swiper-container">   
@@ -50,10 +49,9 @@ require_once 'php/post-bg-helper.php';
 		
 		<?php else:
 		//***** No posts yet *****	
-		
-		$postBg = get_postBg(get_the_id());	
+
 		?>
-		<div class="post swiper-slide <?= $postBg->class ?>" style="<?= $postBg->style ?>">
+		<div class="post swiper-slide">
 			<div class="post-shadow">	
 				<div class='post-content backgroundCheck'>
 					<div class='post-title backgroundCheck'>

@@ -136,15 +136,10 @@ html, body{
 	}
 	
 	
-	.bgLight{
-		color: #3b3c3d;
-	}
-	
-	.bgDark{
-		color: white;
-	}
-	
+
 	.post-shadow{
+		background-color: $color-greyLight;
+
 		.post-categories{		
 			position: absolute;
 			max-width: 30%;

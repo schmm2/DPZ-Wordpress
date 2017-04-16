@@ -1,6 +1,17 @@
 <?php
-$postBg = get_postBg(get_the_id());	
+
+$postBg = new stdClass();
+
+// check for Background Image
+$image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'large');
+
+// set Image as Background
+if(strlen($image[0]) > 0){
+	$postBg->style = 'background-image: url('.$image[0].')"';
+	$postBg->class = 'background-image';
+}
 ?>
+
 <div class="post swiper-slide">
 	<div class="post-shadow">	
 		<div class="post-categories">
@@ -18,7 +29,9 @@ $postBg = get_postBg(get_the_id());
 			</div>
 			<div class="post-date"></div>
 			<div class='post-text'>							
-				<?php the_excerpt(); ?>
+				<?php
+                    the_excerpt();
+				?>
 				 <button data-post-url="<?= get_permalink();?>" class="button-readmore bgBorderColor-second-hover">Weiterlesen</button>
 			</div>
 		</div>	

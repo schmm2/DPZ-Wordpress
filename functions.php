@@ -70,12 +70,27 @@ add_action('login_head', 'custom_loginlogo');
 
 /***** Wordpress Editor *****/
 add_editor_style('css/editor-style.css');  
-add_editor_style('css/fonts.css'); 
+add_editor_style('css/fonts.css');
+
+add_filter( 'mce_buttons_2', 'fb_mce_editor_buttons' );
+function fb_mce_editor_buttons( $buttons ) {
+
+	array_unshift( $buttons, 'styleselect' );
+	return $buttons;
+}
+
 
 // Change Editor Font Styles
-function mce_mod( $init ) {
-    $init['block_formats'] = 'Paragraph=p;Header 1=h1;Header 2=h2;Header 3=h3';
-    return $init;
+function mce_mod( $settings ) {
+    $settings['block_formats'] = 'Paragraph=p;Header 1=h1;Header 2=h2;Header 3=h3';
+
+	$style_formats = array(
+		array('title' => 'Intro', 'block' => 'p', 'classes' => 'intro')
+	);
+
+	$settings['style_formats'] = json_encode( $style_formats );
+
+    return $settings;
 }
 add_filter('tiny_mce_before_init', 'mce_mod');
 
@@ -114,10 +129,6 @@ function global_js_vars()
 add_action( 'wp_head', 'global_js_vars');;
 
 /***** Ajax *****/
-// Business Location
-require_once ("$dirName/php/get_businessLocations.php");
-add_action("wp_ajax_nopriv_get_businessLocations", 'get_businessLocations');
-add_action('wp_ajax_get_businessLocations', 'get_businessLocations');
 
 // Email
 require_once ("$dirName/php/send_mail.php");
@@ -193,10 +204,6 @@ function dpz_customizer_css() {
 	        background-color: <?php echo brightenRGB(get_theme_mod( 'dpz_second_color' )); ?> !important; 
 	        border-color: <?php echo brightenRGB(get_theme_mod( 'dpz_second_color' )); ?> !important;
 	    }
-      
-		/* Third Color */
-        .color-third { color: <?php echo get_theme_mod( 'dpz_third_color' ); ?>; }
-        .bgColor-third { background-color: <?php echo get_theme_mod( 'dpz_third_color' ); ?>; }
 
         
     </style>
@@ -281,24 +288,6 @@ function dpz_register_theme_customizer( $wp_customize ) {
         )
     );
     
-    // Third
-    $wp_customize->add_setting(
-        'dpz_third_color',
-        array('default'     => '#f2f5f9')
-    );
- 
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'third_color',
-            array(
-                'label'      => __( 'Third Color', 'dpz' ),
-                'section'    => 'colors',
-                'settings'   => 'dpz_third_color'
-            )
-        )
-    );
-    
     // Link
     $wp_customize->add_setting(
         'dpz_link_color',
@@ -374,8 +363,7 @@ function activate_script() {
     
     wp_enqueue_script( 'cookie', get_template_directory_uri().'/js/js.cookie.js'); 
    
-    wp_enqueue_script( 'bgBrighntess', get_template_directory_uri().'/js/bgBrightness.js', array('jquery')); 
-        
+
 	/* Bugfill */
 	wp_enqueue_script( 'viewport-bugfill', get_template_directory_uri().'/js/bugfill/viewport-units-buggyfill.js');
 	wp_enqueue_script( 'viewport-bugfill-hacks', get_template_directory_uri().'/js/bugfill/viewport-units-buggyfill.hacks.js'); 
@@ -407,9 +395,8 @@ function activate_script() {
 	    wp_enqueue_style( 'projects' );
 	    
 	    wp_enqueue_script( 'projects-js', get_template_directory_uri().'/js/projects.js', array( 'jquery'));
-	      
-		wp_enqueue_script( 'isotope',  "https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.js
-", array( 'jquery'));
+
+		wp_enqueue_script( 'isotope',  get_template_directory_uri().'/js/isotope.pkgd.min.js', array( 'jquery'));
 	    wp_enqueue_script( 'packery', get_template_directory_uri().'/js/packery-mode.pkgd.min.js', array( 'jquery','isotope'));
 	    
 	    wp_enqueue_script( 'slimScroll', get_template_directory_uri().'/js/jquery.slimscroll.min.js', array( 'jquery'));
@@ -422,8 +409,6 @@ function activate_script() {
 	if(is_page_template('page-team.php')){
 		wp_register_style( 'team', get_template_directory_uri().'/css/team.css' );
 	    wp_enqueue_style( 'team' );
-	    
-	    wp_enqueue_script( 'masonry', 'https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.min.js', array( 'jquery')); 
 	}
 	
 	if(is_page_template('page-offers.php')){
@@ -476,8 +461,7 @@ function activate_script() {
  			
  		wp_register_style( 'footer', get_template_directory_uri().'/css/footer.css' );
  		wp_enqueue_style( 'footer' );
- 		
- 		wp_enqueue_script( 'footer-js', get_template_directory_uri().'/js/footer.js');
+
  	}
 
  	

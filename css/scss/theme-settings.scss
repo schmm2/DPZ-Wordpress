@@ -1,7 +1,7 @@
 /***** Media Query *****/
 $break-big:1300px;
 $break-middle:1100px;
-$break-small:600px;
+$break-small:800px;
 
 /***** Color *****/
 $color-text: #222222;
@@ -25,7 +25,7 @@ $color-greyVeryDark: #626466;
 /********** Layout **********/
 
 .content-center{
-	padding: 7vw 2vw 10vw 2vw;
+	padding: 7vw 2vw 7vw 2vw;
 	margin: 0px 10vw 0px 10vw;
 	width: 80vw;
 }
@@ -59,19 +59,11 @@ h3{
 	margin: 40px 0px 30px 0px;
 }
 
-h6
-{
-	font-size: 6rem;
-	font-family: $font-oswald;
-	font-weight: 400;
-	margin: 0px 0px 15px 0px;
-}
-
-h7
-{
-	font-size: 3rem;
-	font-weight: 300;
-	margin: 0px 0px 20px 0px;
+.intro{
+	font-size: 2.7rem;
+	line-height: 1.3;
+	text-align: center;
+  	color: $color-greyVeryDark;
 }
 
 .fa
