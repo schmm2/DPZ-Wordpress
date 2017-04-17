@@ -92,35 +92,6 @@ $offersCategory_topLevel = get_terms( array(
 		    echo '</div>';
 	    }
 	    echo '</div>';
-
-
-
-	    /*
-        if(->have_posts()){
-
-            echo '<div class="offer_category"><div class="offers">';
-
-            while ( $query->have_posts() ) : $query->the_post();
-
-
-
-                ?>
-
-                <div class="offer">
-                    <div class="text-container">
-                        <p class="offer-title"><? the_title() ?></p>
-                        <p class="offer-description"><?php echo get_the_content() ?></p>
-                    </div>
-                    <div class="offer-price"><?php echo $price ?></div>
-                </div>
-
-            <?
-                endwhile;
-
-            echo '</div></div>';
-
-            wp_reset_postdata();
-        }*/
     }
     echo '</div>';
 

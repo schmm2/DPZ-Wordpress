@@ -2,341 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9aa286e9-bc59-42ef-abd0-9db94136dc2b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/CONTRIBUTING.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/Dockunit.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/Gruntfile.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/Gruntfile.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/bootstrap.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/coverage.clover" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/cmb2-front.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/cmb2-front.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/cmb2-front.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/cmb2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/cmb2.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/cmb2.min.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/css/cmb2-front.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/css/cmb2-front.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/css/cmb2.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/css/cmb2.css.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/cmb2-front.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/cmb2.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/_collapsible_ui.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/_front.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/_jquery_ui.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/_main_wrap.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/_misc.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/_mixins.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/_post_metaboxes.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/_sidebar_placements.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/_variables.scss" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/css/sass/partials/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/example-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ico-delete.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-bg_flat_0_aaaaaa_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-bg_flat_75_ffffff_40x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-bg_glass_55_fbf9ee_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-bg_glass_65_ffffff_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-bg_glass_75_dadada_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-bg_glass_75_e6e6e6_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-bg_glass_95_fef1ec_1x400.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-bg_highlight-soft_75_cccccc_1x100.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-icons_222222_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-icons_2e83ff_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-icons_454545_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-icons_888888_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/images/ui-icons_cd0a0a_256x240.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_Ajax.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_Boxes.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_Field.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_JS.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_Options.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_Sanitize.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_Show_Filters.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_Types.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_Utils.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/CMB2_hookup.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/helper-functions.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/includes/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/init.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/js/cmb2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/js/cmb2.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/js/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/js/jquery-ui-timepicker-addon.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ach.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ach.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-af.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-af.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-an.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-an.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ar.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ar.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-as.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-as.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-az.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-az.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-be.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-be.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bg.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bg.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bg_BG.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bg_BG.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bn_BD.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bn_BD.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-br.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-br.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bs.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bs.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bs_BA.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-bs_BA.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ca.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ca.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-co.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-co.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-cs_CZ.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-cs_CZ.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-cy.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-cy.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-da_DK.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-da_DK.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-de_AT.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-de_AT.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-de_CH.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-de_CH.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-de_DE.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-de_DE.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-dv.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-dv.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-el.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-el.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-en@pirate.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-en@pirate.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-en_AU.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-en_AU.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-en_CA.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-en_CA.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-en_GB.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-en_GB.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-eo.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-eo.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_AR.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_AR.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_CL.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_CL.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_CO.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_CO.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_ES.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_ES.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_MX.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_MX.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_PE.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_PE.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_VE.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-es_VE.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-et.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-et.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-eu.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-eu.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fa.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fa.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fa_IR.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fa_IR.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fi.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fi.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fo.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fo.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fr_BE.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fr_BE.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fr_CA.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fr_CA.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fr_FR.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fr_FR.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fy.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-fy.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ga.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ga.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-gd.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-gd.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-gl_ES.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-gl_ES.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-gu_IN.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-gu_IN.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-he_IL.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-he_IL.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-hi_IN.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-hi_IN.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-hr.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-hr.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-hu_HU.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-hu_HU.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-hy.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-hy.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-id_ID.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-id_ID.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-is_IS.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-is_IS.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-it_IT.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-it_IT.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ja.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ja.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-jv.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-jv.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ka.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ka.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ka_GE.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ka_GE.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-kk.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-kk.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-km.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-km.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-kn.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-kn.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ko_KR.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ko_KR.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ku.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ku.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ky.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ky.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-lo.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-lo.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-lt_LT.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-lt_LT.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-lv.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-lv.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-mg.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-mg.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-mk_MK.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-mk_MK.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-mn.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-mn.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-mr.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-mr.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ms_MY.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ms_MY.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-my_MM.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-my_MM.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-nb_NO.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-nb_NO.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ne_NP.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ne_NP.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-nl_BE.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-nl_BE.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-nl_NL.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-nl_NL.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-nn_NO.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-nn_NO.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-oc.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-oc.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-os.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-os.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-pap.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-pap.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-pl_PL.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-pl_PL.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ps.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ps.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-pt_BR.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-pt_BR.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-pt_PT.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-pt_PT.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ro_RO.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ro_RO.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ru_RU.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ru_RU.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sa.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sa.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sah.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sah.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-si_LK.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-si_LK.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sk_SK.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sk_SK.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sl_SI.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sl_SI.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-so.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-so.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sq.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sq.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sr_RS.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sr_RS.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-su.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-su.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sv_SE.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sv_SE.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sw.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-sw.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ta_IN.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ta_IN.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ta_LK.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ta_LK.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-te.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-te.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tg.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tg.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-th.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-th.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tk_TM.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tk_TM.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tl.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tl.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tr_TR.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tr_TR.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tzm.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-tzm.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ug.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ug.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-uk.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-uk.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ur.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ur.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ur_PK.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-ur_PK.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-uz.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-uz.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-vi.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-vi.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-zh_CN.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-zh_CN.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-zh_HK.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-zh_HK.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-zh_TW.mo" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2-zh_TW.po" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/languages/cmb2.pot" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/phpunit.xml.dist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/readme.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/tests/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/tests/bin/install-wp-tests.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/tests/bootstrap.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/tests/cmb-tests-base.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/tests/index.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/tests/test-cmb-core.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/tests/test-cmb-field.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/tests/test-cmb-types.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/cmb2/tests/test-cmb-utils.php" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cmb2/css/index.php" afterPath="$PROJECT_DIR$/js/offers.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/cmb2/css/sass/index.php" afterPath="$PROJECT_DIR$/php/post-bg-helper.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/contactform.css" afterPath="$PROJECT_DIR$/css/contactform.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/main.css" afterPath="$PROJECT_DIR$/css/main.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/offers.css" afterPath="$PROJECT_DIR$/css/offers.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/contactform.scss" afterPath="$PROJECT_DIR$/css/scss/contactform.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/main.scss" afterPath="$PROJECT_DIR$/css/scss/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/offers.scss" afterPath="$PROJECT_DIR$/css/scss/offers.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/scss/theme-settings.scss" afterPath="$PROJECT_DIR$/css/scss/theme-settings.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.php" afterPath="$PROJECT_DIR$/footer.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/functions.php" afterPath="$PROJECT_DIR$/functions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/contactForm.js" afterPath="$PROJECT_DIR$/js/contactForm.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-offers.php" afterPath="$PROJECT_DIR$/page-offers.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page-projects.php" afterPath="$PROJECT_DIR$/page-projects.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/part-contactForm.php" afterPath="$PROJECT_DIR$/part-contactForm.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/send_mail.php" afterPath="$PROJECT_DIR$/php/send_mail.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -395,13 +61,9 @@
       <file leaf-file-name="page-offers.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/page-offers.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-126">
-              <caret line="40" column="49" lean-forward="false" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
-              <folding>
-                <marker date="1492453011000" expanded="true" signature="2590:2591" ph="..." />
-                <marker date="1492453011000" expanded="true" signature="2737:3066" ph="..." />
-                <marker date="1492453011000" expanded="true" signature="2786:2971" ph="..." />
-              </folding>
+            <state relative-caret-position="632">
+              <caret line="93" column="22" lean-forward="false" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -499,10 +161,10 @@
         <option value="$PROJECT_DIR$/js/contactForm.js" />
         <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/css/scss/main.scss" />
-        <option value="$PROJECT_DIR$/page-offers.php" />
         <option value="$PROJECT_DIR$/js/offers.js" />
         <option value="$PROJECT_DIR$/css/scss/offers.scss" />
         <option value="$PROJECT_DIR$/css/scss/theme-settings.scss" />
+        <option value="$PROJECT_DIR$/page-offers.php" />
       </list>
     </option>
   </component>
@@ -750,12 +412,12 @@
       <workItem from="1492265690838" duration="236000" />
       <workItem from="1492329541344" duration="1276000" />
       <workItem from="1492359067388" duration="12412000" />
-      <workItem from="1492435580605" duration="12694000" />
+      <workItem from="1492435580605" duration="12748000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51038000" />
+    <option name="totallyTimeSpent" value="51092000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="1023" extended-state="6" />
@@ -1201,13 +863,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/page-offers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="40" column="49" lean-forward="false" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
-          <folding>
-            <marker date="1492453011000" expanded="true" signature="2590:2591" ph="..." />
-            <marker date="1492453011000" expanded="true" signature="2737:3066" ph="..." />
-            <marker date="1492453011000" expanded="true" signature="2786:2971" ph="..." />
-          </folding>
+        <state relative-caret-position="632">
+          <caret line="93" column="22" lean-forward="false" selection-start-line="93" selection-start-column="22" selection-end-line="93" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
