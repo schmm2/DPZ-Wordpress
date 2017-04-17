@@ -1,12 +1,12 @@
 jQuery(document).ready(function($) {
 	
-	$('[class^=input-]').after("<div class='message'></div>");
+	$('[class^=input-]').after("<div class='notificationMessage'></div>");
 	
 	// check if it exist
-	if($(".contactForm").length){		
-		$(".contactForm").submit(function(e){	
-			
-			$('.message').html('');
+	if($(".contact-form").length){
+		$(".contact-form").submit(function(e){
+
+			$('.notificationMessage').html('');
 			var msgTemplate = $.templates("<p class='{{:text_color}}'>{{:message}}</p>");
 			
 			var emptyMsg = "Dieses Feld darf nicht leer sein";
@@ -20,45 +20,47 @@ jQuery(document).ready(function($) {
 		    var name = $(this).find('.input-name');
 		    var mail = $(this).find('.input-mail');
 		    var message = $(this).find('.input-message');
-		    var subject = $(this).find('.input-subject');
-			
+
+
 			// check fields
 			var send = true;
 			
 			// *** Name Field ***
 			if(name.val() == ""){
-				name.next('.message').html(msgTemplate.render({'text_color':'text-alert',message: emptyMsg}));  
+				name.next('.notificationMessage').html(msgTemplate.render({'text_color':'text-alert',message: emptyMsg}));
 				send = false;
 			}
 			
 			/*** Mail Field ***/
 			if(mail.val() == ""){
-				mail.next('.message').html(msgTemplate.render({'text_color':'text-alert',message: emptyMsg}));  
+				mail.next('.notificationMessage').html(msgTemplate.render({'text_color':'text-alert',message: emptyMsg}));
 				send = false;
 			}
 			// Fallback if HTML5 is not supported
 			else if(!mailReg.test(mail.val())){
-				mail.next('.message').html(msgTemplate.render({'text_color':'text-alert',message: syntaxMailMsg}));  	
+				mail.next('.notificationMessage').html(msgTemplate.render({'text_color':'text-alert',message: syntaxMailMsg}));
 				send = false;
 			}
 			if(message.val() == ""){
-				message.next('.message').html(msgTemplate.render({'text_color':'text-alert',message: emptyMsg}));  
+				message.next('.notificationMessage').html(msgTemplate.render({'text_color':'text-alert',message: emptyMsg}));
 				send = false;
 			}
 			
 			if(send == true){
+
 				// Ajax send message
-				
-				$.post( globals.ajaxurl,{action : 'send_mail', "message":message.val(),"senderMail":mail.val(),"subject":subject.val(),"senderName":name.val()})
+				$.post( globals.ajaxurl,{action : 'send_mail', "message":message.val(),"senderMail":mail.val(),"senderName":name.val()})
 				.done(function(data) 
-				{					
-					var serverMsg = JSON.parse(data);
-					var color = '';
+				{
+				    var serverMsg = JSON.parse(data);
+					console.log(serverMsg);
+				    var color = '';
 					var msg = '';
 										
 					switch(serverMsg['code']){
 						case false:
-							color = 'text-alert';
+						    console.log("ERRROR");
+						    color = 'text-alert';
 							msg = 'Nachricht konnte nicht übermittelt werden';
 							break;
 						case true:
@@ -69,17 +71,13 @@ jQuery(document).ready(function($) {
 							color = 'text-alert';
 							msg = 'Kein Empfänger Mail definiert';
 							break;
-						case 'noContactPage':
-							color = 'text-alert';
-							msg = 'Keine Kontakt Seite definiert';
-							break;
 						default:
 							color = 'text-alert';
-							msg = serverMsg['code'];
+							msg = 'Unbekannter Fehler';
 							break;	
 					}
 					// set message
-					message.next('.message').html(msgTemplate.render({'text_color':color, message: msg}));
+					message.next('.notificationMessage').html(msgTemplate.render({'text_color':color, message: msg}));
 				});	
 			}	
 			return false;

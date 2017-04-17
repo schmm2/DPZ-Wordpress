@@ -412,7 +412,9 @@ function activate_script() {
 	}
 	
 	if(is_page_template('page-offers.php')){
-		wp_register_style( 'offers', get_template_directory_uri().'/css/offers.css' );
+		wp_enqueue_script( 'offers-js', get_template_directory_uri().'/js/offers.js', array('jquery'));
+
+	    wp_register_style( 'offers', get_template_directory_uri().'/css/offers.css' );
 	    wp_enqueue_style( 'offers' );
 	}
 	
@@ -444,20 +446,8 @@ function activate_script() {
 	
 	// Footer loaded
 	if(!is_home()){
- 		
- 		// Contact Form
- 		$args = array(
- 			'post_type' => 'page',
-		    'fields' => 'ids',
-		    'nopaging' => true,
-		    'meta_key' => '_wp_page_template',
-		    'meta_value' => 'page-contact.php'
-		);
-		$pages = get_posts( $args );
-		if(sizeof($pages) > 0){
- 			wp_enqueue_script( 'contactForm', get_template_directory_uri().'/js/contactForm.js', array( 'jquery'));
- 			wp_enqueue_script( 'jsRender', get_template_directory_uri().'/js/jsrender.min.js', array( 'jquery'));
- 		}
+		wp_enqueue_script( 'contactForm', get_template_directory_uri().'/js/contactForm.js', array( 'jquery'));
+		wp_enqueue_script( 'jsRender', get_template_directory_uri().'/js/jsrender.min.js', array( 'jquery'));
  			
  		wp_register_style( 'footer', get_template_directory_uri().'/css/footer.css' );
  		wp_enqueue_style( 'footer' );
@@ -672,10 +662,43 @@ function offer_post_type() {
 }
 add_action( 'init', 'offer_post_type', 0 );
 
+/**
+ * Register `adress` post type
+ */
+function adress_post_type() {
 
+	// Labels
+	$labels = array(
+		'name' => _x("Addressen", "post type general name"),
+		'singular_name' => _x("Addresse", "post type singular name"),
+		'menu_name' => 'Addressen',
+		'add_new' => _x("Neue Addresse hinzufügen", "team item"),
+		'add_new_item' => __("Neue Addresse hinzufügen"),
+		'edit_item' => __("Addresse bearbeiten"),
+		'new_item' => __("Neue Addresse hinzufügen"),
+		'view_item' => __("Addresse ansehen"),
+		'search_items' => __("Addresse suchen"),
+		'not_found' =>  __("Keine Addresse gefunden"),
+		'not_found_in_trash' => __("Keine Addresse im Papierkorb gefunden"),
+		'parent_item_colon' => ''
+	);
+
+	// Register post type
+	register_post_type('adress' , array(
+		'labels' => $labels,
+		'public' => true,
+		'has_archive' => true,
+		/* icon from wordpress ressource */
+		'menu_icon' => 'dashicons-location',
+		'rewrite' => false,
+		'supports' => array('title')
+	) );
+}
+add_action( 'init', 'adress_post_type', 0 );
 
 
 /********** Metaboxes **********/
+
 
 if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 	require_once dirname( __FILE__ ) . '/cmb2/init.php';
@@ -684,16 +707,16 @@ if ( file_exists( dirname( __FILE__ ) . '/cmb2/init.php' ) ) {
 }
 
 
+/***** Post Types *****/
 /**
 * All posts metabox
+* Tested: 17.4.2017
 */
 
 add_action( 'cmb2_init', 'register_post_metabox' );
 function register_post_metabox() {
 	
 	$prefix_post = '_dpz_post_';
-
-	// *** Personal
 
 	$cmb_post= new_cmb2_box( array(
 		'id'            => $prefix_post . 'metabox',
@@ -713,6 +736,7 @@ function register_post_metabox() {
 
 /**
 * PostType 'offer' metabox
+* Tested: 17.4.2017
 */
 
 add_action( 'cmb2_init', 'register_offer_metabox' );
@@ -736,18 +760,11 @@ function register_offer_metabox() {
 		'after_field' => '',
 		'before_field' => ' ',
 	) );
-	
-	$cmb_price->add_field( array(
-	    'name'     => 'Angebot Kategorie',
-	    'desc'     => 'Angebot Kategorie',
-	    'id'       => $prefix_offer . 'offerSelect',
-	    'taxonomy' => 'offer_cat', //Enter Taxonomy Slug
-	    'type'     => 'taxonomy_select',
-	));
 }
 
 /**
 * PostType 'teamMember' metabox
+* Tested: 17.4.2017
 */
 
 add_action( 'cmb2_init', 'register_teamMember_metabox' );
@@ -761,13 +778,6 @@ function register_teamMember_metabox() {
 		'id'            => $prefix_teamMember . 'metabox',
 		'title'         => __( 'Member Information', 'cmb2' ),
 		'object_types'  => array( 'teammember') // Post type		
-	) );
-	
-	$cmb_teamMember->add_field( array(
-		'name' => __( 'Ressort Kontakt', 'cmb2' ),
-		'desc' => __( 'check if this member is the ressort contact', 'cmb2' ),
-		'id'   => $prefix_teamMember . 'ressortContact',
-		'type' => 'checkbox',
 	) );
 	
 	$cmb_teamMember->add_field( array(
@@ -790,11 +800,12 @@ function register_teamMember_metabox() {
 		'id'   => $prefix_teamMember . 'soundcloudUrl',
 		'type' => 'text_url',
 	) );
-}	
-	
-/**
+}
+
+
+/*
 * Page 'contact' metabox
- Bunsiness Information
+* Bunsiness Information
 */
 
 add_action( 'cmb2_init', 'register_contact_metabox' );
@@ -807,45 +818,48 @@ function register_contact_metabox() {
 	
 	$cmb_contact_business = new_cmb2_box( array(
 		'id'            => $prefix_contact_business . 'metabox',
-		'title'         => __( 'Contact Information', 'cmb2' ),
-		'object_types'  => array( 'page'), // Post type
-		'show_on' 		=> array( 'key' => 'page-template', 'value' => 'template-contact.php' ),		
+		'title'         => __( 'Kontakt Information', 'cmb2' ),
+		'object_types'  => array( 'adress'), // Post type
 	) );
 	
 	$cmb_contact_business->add_field( array(
-		'name' => __( 'Street', 'cmb2' ),
-		'desc' => __( 'Business Street Name', 'cmb2' ),
+		'name' => __( 'Stasse', 'cmb2' ),
+		'desc' => __( '', 'cmb2' ),
 		'id'   => $prefix_contact_business . 'street',
 		'type' => 'text_medium',
 	) );
 	
 	$cmb_contact_business->add_field( array(
-		'name' => __( 'City', 'cmb2' ),
-		'desc' => __( 'Business City Name', 'cmb2' ),
+		'name' => __( 'Stadt', 'cmb2' ),
+		'desc' => __( '', 'cmb2' ),
 		'id'   => $prefix_contact_business . 'city',
 		'type' => 'text_medium',
 	) );
 	
 	$cmb_contact_business->add_field( array(
-		'name' => __( 'Phone', 'cmb2' ),
-		'desc' => __( 'Phone Number', 'cmb2' ),
+		'name' => __( 'Telefon', 'cmb2' ),
+		'desc' => __( '', 'cmb2' ),
 		'id'   => $prefix_contact_business . 'phone',
 		'type' => 'text_medium',
 	) );
 	
 	$cmb_contact_business->add_field( array(
 		'name' => __( 'E-Mail', 'cmb2' ),
-		'desc' => __( 'E-Mail', 'cmb2' ),
-		'id'   => $prefix_contact_business . 'mail',
+		'desc' => __( '', 'cmb2' ),
+		'id'   => $prefix_contact_business . 'email',
 		'type' => 'text_email',
 	) );	
 }
 
-/**
+/***** Page Templates *****/
+
+/*
 * Page 'contact' metabox
-  Map
+* Map
+* Disabled yet
 */
 
+/*
 add_action( 'cmb2_init', 'register_contact_map_metabox' );
 function register_contact_map_metabox() {
 
@@ -858,7 +872,7 @@ function register_contact_map_metabox() {
 		'id'            => $prefix_contact_map. 'metabox',
 		'title'         => __( 'Map Information', 'cmb2' ),
 		'object_types'  => array( 'page'), // Post type
-		'show_on' 		=> array( 'key' => 'page-template', 'value' => 'template-contact.php' ),		
+		'show_on' 		=> array( 'key' => 'page-template', 'value' => 'page-contact.php' ),
 	) );
 		
 	$cmb_contact_map->add_field( array(
@@ -873,49 +887,17 @@ function register_contact_map_metabox() {
 		'id'   => $prefix_contact_map . 'latitude',
 		'type' => 'text_medium',
 	) );
-}
-
-/**
-* Page Template 'department' metabox
-*/
-
-add_action( 'cmb2_init', 'register_department_metabox' );
-function register_department_metabox() {
-
-	// Start with an underscore to hide fields from custom fields list
-	$prefix_department = '_dpz_department_';
-	
-	$cmb_department = new_cmb2_box( array(
-		'id'            => $prefix_department . 'metabox',
-		'title'         => __( 'Ressort Information', 'cmb2' ),
-		'object_types' 	=> array( 'department' ),		
-	) );
-	
-	$cmb_department->add_field( array(
-    	'name'    => 'Farbe',
-		'id'      => $prefix_department.'color',
-		'type'    => 'colorpicker',
-		'default' => '#ffffff',
-	) );
-	
-	$cmb_department ->add_field( array(
-		'name' => __( 'Url', 'cmb2' ),
-		'desc' => __( 'Url to another page', 'cmb2' ),
-		'id'   => $prefix_department . 'url',
-		'type' => 'text_url',
-	) );
-}
+}*/
 
 /***** Taxonomies *****/
 
-//create a function that will attach our new 'member' taxonomy to the 'post' post type
 function add_offer_taxonomy_to_post(){
 
     //set the name of the taxonomy
-    $taxonomy = 'offer_cat';
+    $taxonomy = 'offer_category';
     //set the post types for the taxonomy
-    $object_type = 'price';
-    
+    $object_type = 'offer';
+
     //populate our array of names for our taxonomy
     $labels = array(
         'name'               => 'Angebot Kategorie',
@@ -926,15 +908,15 @@ function add_offer_taxonomy_to_post(){
         'parent_item_colon'  => 'Parent Member:',
         'update_item'        => 'Update Angebot',
         'edit_item'          => 'Edit Angebot',
-        'add_new_item'       => 'Neues Angebot', 
+        'add_new_item'       => 'Neues Angebot',
         'new_item_name'      => 'Neues Angebot',
         'menu_name'          => 'Angebot Kategorie'
     );
-    
-    //define arguments to be used 
+
+    //define arguments to be used
     $args = array(
         'labels'            => $labels,
-        'hierarchical'      => false,
+        'hierarchical'      => true,
         'show_ui'           => true,
         'how_in_nav_menus'  => true,
         'public'            => true,
@@ -942,50 +924,13 @@ function add_offer_taxonomy_to_post(){
         'query_var'         => true,
         'rewrite'           => array('slug' => 'offer')
     );
-    
+
     //call the register_taxonomy function
-    register_taxonomy($taxonomy, $object_type, $args); 
+    register_taxonomy($taxonomy, $object_type, $args);
 }
-add_action('init','add_offer_taxonomy_to_post');
+add_action('init','add_offer_taxonomy_to_post', 0);
 
 
-function brightenRGB($rgb) {
-	$rgbValues = split_rgb($rgb);
-	
-	for($i = 0; $i < 3; $i++){		
-		// make it brighter
-		$rgbValues[$i] += 40;
-		
-		if($rgbValues[$i] > 255){
-			$rgbValues[$i] = 255;
-		}
-	}	
-	return "rgb(".join(',',$rgbValues).")";
-}
-
-function darkenRGB($rgb) {
-	$rgbValues = split_rgb($rgb);
-		
-	for($i = 0; $i < 3; $i++){
-			
-		// make it brighter
-		$rgbValues[$i] -= 30;
-		
-		if($rgbValues[$i] < 0){
-			$rgbValues[$i] = 0;
-		}
-	}	
-	return "rgb(".join(',',$rgbValues).")";
-}
-
-function split_rgb($rgb){
-	// extract rgb values
-	$rgbValues[0] = hexdec(substr($rgb, 1,2));
-	$rgbValues[1] = hexdec(substr($rgb, 3,2));
-	$rgbValues[2] = hexdec(substr($rgb, 5,2));
-	
-	return $rgbValues;
-}
 
 // hide the link text
 class dpz_socialLink_walker_nav_menu extends Walker_Nav_Menu {
@@ -1055,4 +1000,43 @@ function youtube_id_from_url($url) {
         return $matches[1];
     }
     return false;
+}
+
+/***** Utility *****/
+function brightenRGB($rgb) {
+	$rgbValues = split_rgb($rgb);
+
+	for($i = 0; $i < 3; $i++){
+		// make it brighter
+		$rgbValues[$i] += 40;
+
+		if($rgbValues[$i] > 255){
+			$rgbValues[$i] = 255;
+		}
+	}
+	return "rgb(".join(',',$rgbValues).")";
+}
+
+function darkenRGB($rgb) {
+	$rgbValues = split_rgb($rgb);
+
+	for($i = 0; $i < 3; $i++){
+
+		// make it brighter
+		$rgbValues[$i] -= 30;
+
+		if($rgbValues[$i] < 0){
+			$rgbValues[$i] = 0;
+		}
+	}
+	return "rgb(".join(',',$rgbValues).")";
+}
+
+function split_rgb($rgb){
+	// extract rgb values
+	$rgbValues[0] = hexdec(substr($rgb, 1,2));
+	$rgbValues[1] = hexdec(substr($rgb, 3,2));
+	$rgbValues[2] = hexdec(substr($rgb, 5,2));
+
+	return $rgbValues;
 }
