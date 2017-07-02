@@ -809,44 +809,6 @@ function register_contact_metabox() {
 	) );	
 }
 
-/***** Page Templates *****/
-
-/*
-* Page 'contact' metabox
-* Map
-* Disabled yet
-*/
-
-/*
-add_action( 'cmb2_init', 'register_contact_map_metabox' );
-function register_contact_map_metabox() {
-
-	// Start with an underscore to hide fields from custom fields list
-	$prefix_contact_map = '_dpz_contact_map_';
-	
-	// *** Business
-	
-	$cmb_contact_map = new_cmb2_box( array(
-		'id'            => $prefix_contact_map. 'metabox',
-		'title'         => __( 'Map Information', 'cmb2' ),
-		'object_types'  => array( 'page'), // Post type
-		'show_on' 		=> array( 'key' => 'page-template', 'value' => 'page-contact.php' ),
-	) );
-		
-	$cmb_contact_map->add_field( array(
-		'name' => __( 'Longitude', 'cmb2' ),
-		'desc' => __( 'Longitude Location of your Business', 'cmb2' ),
-		'id'   => $prefix_contact_map . 'longitude',
-		'type' => 'text_medium',
-	) );
-	$cmb_contact_map->add_field( array(
-		'name' => __( 'Latitude', 'cmb2' ),
-		'desc' => __( 'Latitude Location of your Business', 'cmb2' ),
-		'id'   => $prefix_contact_map . 'latitude',
-		'type' => 'text_medium',
-	) );
-}*/
-
 /***** Taxonomies *****/
 
 function add_offer_taxonomy_to_post(){
@@ -958,43 +920,4 @@ function youtube_id_from_url($url) {
         return $matches[1];
     }
     return false;
-}
-
-/***** Utility *****/
-function brightenRGB($rgb) {
-	$rgbValues = split_rgb($rgb);
-
-	for($i = 0; $i < 3; $i++){
-		// make it brighter
-		$rgbValues[$i] += 40;
-
-		if($rgbValues[$i] > 255){
-			$rgbValues[$i] = 255;
-		}
-	}
-	return "rgb(".join(',',$rgbValues).")";
-}
-
-function darkenRGB($rgb) {
-	$rgbValues = split_rgb($rgb);
-
-	for($i = 0; $i < 3; $i++){
-
-		// make it brighter
-		$rgbValues[$i] -= 30;
-
-		if($rgbValues[$i] < 0){
-			$rgbValues[$i] = 0;
-		}
-	}
-	return "rgb(".join(',',$rgbValues).")";
-}
-
-function split_rgb($rgb){
-	// extract rgb values
-	$rgbValues[0] = hexdec(substr($rgb, 1,2));
-	$rgbValues[1] = hexdec(substr($rgb, 3,2));
-	$rgbValues[2] = hexdec(substr($rgb, 5,2));
-
-	return $rgbValues;
 }
