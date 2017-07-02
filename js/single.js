@@ -1,5 +1,11 @@
 jQuery(document).ready(function($) {
-	
+
+    BackgroundCheck.init(
+	{
+		targets: '.backgroundCheck',
+		images: '.background-image'
+	});
+
 	var url_back;
 	
 	if(Cookies.get('dpz-project') != undefined){

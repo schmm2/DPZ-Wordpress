@@ -30,12 +30,25 @@
   z-index: 300;
 
   .post-title p{
-    font-size: 8.5rem;
+    font-size: 10rem;
     font-family: $font-oswald;
     text-align: center;
-    color: white;
     margin-top: 0px;
     margin-bottom: 6vh;
+
+    // background check
+    &.background--light{
+      color: black;
+    }
+
+    &.background--complex{
+      color: white;
+    }
+
+    &.background--dark{
+      color: white;
+    }
+
 
     @media screen and (max-width: $break-small){
       font-size: 8.5vmax;
@@ -50,7 +63,7 @@
   margin-top: 80px;
 }
 
-/********** Site strcuture **********/
+/********** Site structure **********/
 
 #site-content{
   z-index: 1;
@@ -60,17 +73,7 @@
 /********** Form **********/
 
 
-input[type="submit"]{
-  @extend %button;
 
-  font-size: 2rem;
-  font-weight: 300;
-}
-
-textarea{
-  width: 100%;
-  max-width: 100%;
-}
 
 /********** Header **********/
 
@@ -86,19 +89,19 @@ textarea{
 }
 
 #nav-desktop{
-  .search-opener{
+  #search-opener{
     margin-left: 4vmax;
   }
 }
 
 
-.search-opener, #opener{
+#search-opener, #mobileMenu-opener{
   &:hover{
     cursor: pointer;
   }
 }
 
-#opener{
+#mobileMenu-opener{
   display: none;
 
   @media screen and (max-width: $break-middle) {
@@ -106,7 +109,7 @@ textarea{
   }
 }
 
-#opener{
+#mobileMenu-opener{
 
   $bar-height: 1.2px;
 
@@ -188,15 +191,30 @@ textarea{
 
   #logo{
     height: 60%;
-    img{
-      max-height: 100%;
-    }
 
-    #logo-siteName{
-      font-family: $font-oswald;
-      color: $color-text;
-      font-size: 3rem;
-      margin: 0px;
+    .logo-link {
+      @extend %flexbox;
+      @extend %flexDirection-row;
+      max-height: 100%;
+
+      .logo-img{
+        margin-right: 20px;
+
+        img {
+          max-height: 100%;
+        }
+      }
+
+      #logo-siteName {
+        font-family: $font-oswald;
+        color: $color-greyVeryDark;
+        font-size: 3rem;
+        margin: 0px;
+
+        @media screen and (max-width: $break-small) {
+          display: none;
+        }
+      }
     }
   }
 }
@@ -233,19 +251,6 @@ textarea{
   @extend %bgCover;
 }
 
-// Background Check
-.background--light {
-  text-shadow: 0px 0px 20px rgba(30, 30, 30, 0.4);
-}
-
-.background--complex{
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-}
-
-.background--dark {
-  text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-}
-
 
 /********** Default **********/
 
@@ -271,7 +276,7 @@ img{
 
 p{
   margin: 30px 0px 20px 0px;
-  font-size: 2rem;
+  font-size: $font-size-default;
 }
 
 html{
@@ -308,6 +313,17 @@ textarea, input{
 }
 
 
+input[type="submit"]{
+  @extend %button;
+
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+textarea{
+  width: 100%;
+  max-width: 100%;
+}
 
 body{
   font-size: 2rem;

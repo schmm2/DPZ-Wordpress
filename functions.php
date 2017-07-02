@@ -1,20 +1,24 @@
 <?php
 
+require_once 'php/post-bg-helper.php';
+
 /***** Pagination *****/
 
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
 add_filter('previous_posts_link_attributes', 'posts_link_attributes');
 
 function posts_link_attributes() {
-    return 'class="bgColor-main-dark-hover nav-pagination"';
+    return 'class="button nav-pagination"';
 }
 
 function dpz_pagination_nav() {
-    global $wp_query; 
-        
+    global $wp_query;
+
+	$postBg = get_postBg();
+
     if ( $wp_query->max_num_pages > 1 ) { ?>
-        <div class='bgColor-main last-slide swiper-slide post'>
-			<div class='post-content backgroundCheck'>
+        <div class='last-slide swiper-slide post'>
+			<div class='post-content'>
 				<div id="pageOf">
 					<? $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 					<sup><?= $paged ?></sup>/<sub><?= $wp_query->max_num_pages?></sub>​
@@ -23,8 +27,9 @@ function dpz_pagination_nav() {
 		            <?php previous_posts_link( '&lang; Neue Einträge' ); ?>
 		            <?php next_posts_link( 'Alte Einträge &rang;' ); ?>
 		        </nav>
-			</div>							
-		</div>
+			</div>
+            <div class="post-image <?= $postBg->class ?>" style="<?= $postBg->style ?>"></div>
+        </div>
 <?php }
 }
 
@@ -140,72 +145,27 @@ add_action('wp_ajax_send_mail', 'send_mail');
 function dpz_customizer_css() {
     ?>
     <style type="text/css">
-        a { color: <?php echo get_theme_mod( 'dpz_link_color' ); ?> ; }
+        a {
+            color: <?php echo get_theme_mod( 'dpz_link_color' ); ?> ;
+        }
 
         /* Footer color */
         #footer{
             background-color: <?php echo get_theme_mod( 'dpz_footer_color' ); ?>;
         }
 
-        /* Button Link */
-        .buttonLink:hover{
-            background-color: <?php echo get_theme_mod( 'dpz_buttonLinkHover_color' ); ?> !important;
-            border-color: <?php echo get_theme_mod( 'dpz_buttonLinkHover_color' ); ?> !important;
+        /* button & highlight */
+        .button:hover, .highlight, .button-colored, .swiper-pagination-bullet-active {
+            background-color: <?php echo get_theme_mod( 'dpz_highlight_color' ); ?> !important;
+            border-color: <?php echo get_theme_mod( 'dpz_highlight_color' ); ?> !important;
             color: white !important;
         }
 
-        /* Main Color */
-        .color-main { color: <?php echo get_theme_mod( 'dpz_main_color' ); ?>; }
-        .bgColor-main { background-color: <?php echo get_theme_mod( 'dpz_main_color' ); ?>; }
- 
-		
-        /* Main Color - Bright */
-        .bgColor-main-bright: { 
-	        background-color: <?php echo brightenRGB(get_theme_mod( 'dpz_main_color' )); ?> !important;
-	    }
-        .bgColor-main-bright-hover:hover{ 
-	        background-color: <?php echo brightenRGB(get_theme_mod( 'dpz_main_color' )); ?> !important; 
-	        border-color: <?php echo brightenRGB(get_theme_mod( 'dpz_main_color' )); ?> !important;
-	    }
-	    
-	    /* Main Color - Dark*/
-        .bgColor-main-dark: { 
-	        background-color: <?php echo darkenRGB(get_theme_mod( 'dpz_main_color' )); ?> !important;
-	    }
-        .bgColor-main-dark-hover:hover{ 
-	        background-color: <?php echo darkenRGB(get_theme_mod( 'dpz_main_color' )); ?> !important; 
-	        border-color: <?php echo darkenRGB(get_theme_mod( 'dpz_main_color' )); ?> !important;
-	    }
-
-
-		/* Second Color */
-        .color-second { color: <?php echo get_theme_mod( 'dpz_second_color' ); ?>; }
-        .bgColor-second{ background-color: <?php echo get_theme_mod( 'dpz_second_color' ); ?> !important;}
-        .bgBorderColor-second { 
-        	border-color: <?php echo get_theme_mod( 'dpz_second_color' ); ?>; 
-        	background-color: <?php echo get_theme_mod( 'dpz_second_color' ); ?>;
+        /* Overlay Color */
+        .overlay {
+            background-color: <?php echo get_theme_mod( 'dpz_overlay_color' ); ?>;
         }
-        .bgBorderColor-second-hover:hover{ 
-	        background-color: <?php echo get_theme_mod( 'dpz_second_color' ); ?> !important; 
-        	border-color: <?php echo get_theme_mod( 'dpz_second_color' ); ?> !important 
-        }
-        
-		/* Second Color Bright */ 
-		.swiper-pagination-bullet-active, .bgColor-second-bright{ 
-			background-color: <?php echo brightenRGB(get_theme_mod( 'dpz_second_color' )); ?> !important;
-		}
-		
-        .bgBorderColor-second-dark-hover:hover{ 
-	        background-color: <?php echo darkenRGB(get_theme_mod( 'dpz_second_color' )); ?> !important; 
-	        border-color: <?php echo darkenRGB(get_theme_mod( 'dpz_second_color' )); ?> !important;
-	    }
-	    
-	    .bgBorderColor-second-bright-hover:hover{ 
-	        background-color: <?php echo brightenRGB(get_theme_mod( 'dpz_second_color' )); ?> !important; 
-	        border-color: <?php echo brightenRGB(get_theme_mod( 'dpz_second_color' )); ?> !important;
-	    }
 
-        
     </style>
     <?php
 }
@@ -234,56 +194,56 @@ function dpz_register_theme_customizer( $wp_customize ) {
 		)
 	);
 
-	// Button Links Hover
+	// Button Color
 	$wp_customize->add_setting(
-		'dpz_buttonLinkHover_color',
+		'dpz_button_color',
 		array('default'     => '#dd3333')
 	);
 
 	$wp_customize->add_control(
 		new WP_Customize_Color_Control(
 			$wp_customize,
-			'buttonLinkHover_color',
+			'button_color',
 			array(
-				'label'      => __( 'Button Links Hover Color', 'dpz' ),
+				'label'      => __( 'Button', 'dpz' ),
 				'section'    => 'colors',
-				'settings'   => 'dpz_buttonLinkHover_color'
+				'settings'   => 'dpz_button_color'
 			)
 		)
 	);
 
- 	// Main
+	// Highlight Color
+	$wp_customize->add_setting(
+		'dpz_highlight_color',
+		array('default'     => '#dd3333')
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'highlight_color',
+			array(
+				'label'      => __( 'Highlight', 'dpz' ),
+				'section'    => 'colors',
+				'settings'   => 'dpz_highlight_color'
+			)
+		)
+	);
+
+ 	// Overlay
     $wp_customize->add_setting(
-        'dpz_main_color',
+        'dpz_overlay_color',
         array('default'     => '#000000')
     );
  
     $wp_customize->add_control(
         new WP_Customize_Color_Control(
             $wp_customize,
-            'main_color',
+            'overlay_color',
             array(
-                'label'      => __( 'Main Color', 'dpz' ),
+                'label'      => __( 'Overlay Color', 'dpz' ),
                 'section'    => 'colors',
-                'settings'   => 'dpz_main_color'
-            )
-        )
-    );
-    
-    // Second
-    $wp_customize->add_setting(
-        'dpz_second_color',
-        array('default'     => '#000000')
-    );
- 
-    $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            'second_color',
-            array(
-                'label'      => __( 'Second Color', 'dpz' ),
-                'section'    => 'colors',
-                'settings'   => 'dpz_second_color'
+                'settings'   => 'dpz_overlay_color'
             )
         )
     );
@@ -368,6 +328,7 @@ function activate_script() {
 	wp_enqueue_script( 'viewport-bugfill', get_template_directory_uri().'/js/bugfill/viewport-units-buggyfill.js');
 	wp_enqueue_script( 'viewport-bugfill-hacks', get_template_directory_uri().'/js/bugfill/viewport-units-buggyfill.hacks.js'); 
 	
+
 	wp_register_style( 'font-awesome', "//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" );
 	wp_enqueue_style( 'font-awesome' );
 
@@ -375,19 +336,18 @@ function activate_script() {
 	wp_register_style( 'main', get_template_directory_uri().'/css/main.css' );
 	wp_enqueue_style( 'main' );
 
+
 	wp_register_style( 'contactform', get_template_directory_uri().'/css/contactform.css' );
 	wp_enqueue_style( 'contactform' );
 
 
 	wp_register_style( 'fonts', get_template_directory_uri().'/css/fonts.css' );
  	wp_enqueue_style( 'fonts' );	 
-	
+
+
 	if(is_page_template('page-contact.php')){
 		wp_register_style( 'contact', get_template_directory_uri().'/css/contact.css' );
 	    wp_enqueue_style( 'contact' );
-	    
-		wp_register_script( 'pw-google-maps-api', 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false', null, null, true );
-		wp_enqueue_script( 'pw-google-maps-api');
 	}
 
 	if(is_page_template('page-projects.php')){
@@ -424,18 +384,16 @@ function activate_script() {
 	    wp_enqueue_style( 'news' );
 	    
 	    wp_enqueue_script( 'slimScroll', get_template_directory_uri().'/js/jquery.slimscroll.min.js', array( 'jquery'));
-		
-		wp_enqueue_script( 'hammer', get_template_directory_uri().'/js/hammer.min.js');
 	
 		// vimeo player api
-		wp_enqueue_script( 'froogaloop', get_template_directory_uri().'/js/froogaloop.min.js', array('jquery'));
+		wp_enqueue_script( 'vimeo', 'https://player.vimeo.com/api/player.js', array('jquery'));
 		
 		// Slides
 		wp_register_style( 'swiper', get_template_directory_uri().'/css/swiper.min.css' );
 		wp_enqueue_style( 'swiper' );
-		wp_enqueue_script( 'swiper-js', get_template_directory_uri().'/js/swiper.jquery.min.js', array(), false,true);
+		wp_enqueue_script( 'swiper-js', get_template_directory_uri().'/js/swiper.jquery.min.js');
 		
-		wp_enqueue_script( 'news', get_template_directory_uri().'/js/news.js');
+		wp_enqueue_script( 'news', get_template_directory_uri().'/js/news.js', array('jquery'));
 	}
 	
 	if(is_single()){
@@ -456,10 +414,10 @@ function activate_script() {
 
  	
 	wp_register_style( 'overlay', get_template_directory_uri().'/css/overlay.css' );
- 	wp_enqueue_style( 'overlay' );	
- 			
-  	wp_enqueue_script( 'overlay-js', get_template_directory_uri().'/js/overlay.js');
-     
+ 	wp_enqueue_style( 'overlay' );
+	wp_enqueue_script( 'overlay-js', get_template_directory_uri().'/js/overlay.js', array( 'jquery'));
+
+
     wp_enqueue_script( 'default', get_template_directory_uri().'/js/default.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tabs', 'jquery-color'));
    
 }
@@ -473,7 +431,7 @@ function custom_wp_trim_excerpt($text) { // Fakes an excerpt if needed
 		$text = get_the_content('');
 	    $text = apply_filters('the_content', $text);
 	    $text = str_replace('\]\]\>', ']]&gt;', $text);
-	    $text = strip_tags($text, '<p><a>');
+	    $text = strip_tags($text, '');
 	    $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
 	    $excerpt_length_long = 9;
 	    $excerpt_length_short = 5;
@@ -497,8 +455,8 @@ function custom_wp_trim_excerpt($text) { // Fakes an excerpt if needed
 	    }
   }
   // add read more button
-  $html = '<div class="excerpt-long">'.$text_long.'</div>
-  		  <div class="excerpt-short">'.$text_short.'</div>';
+  $html = '<div class="excerpt-long"><p>'.$text_long.'</p></div>
+  		  <div class="excerpt-short"><p>'.$text_short.'</p></div>';
   return $html;
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
@@ -962,7 +920,7 @@ class dpz_socialLink_walker_nav_menu extends Walker_Nav_Menu {
 	    $attributes .= ! empty( $item->xfn )        ? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
 	    $attributes .= ! empty( $item->url )        ? ' href="'   . esc_attr( $item->url        ) .'"' : '';
 	    // set bgColor-main-bright-hover
-	    $attributes .= ' class="menu-link buttonLink ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
+	    $attributes .= ' class="menu-link button ' . ( $depth > 0 ? 'sub-menu-link' : 'main-menu-link' ) . '"';
 	  
 		// hide link text
 	    $item_output = sprintf( '%1$s<a%2$s>%3$s%4$s</a>%5$s',

@@ -25,7 +25,7 @@
 			?>
 		</div>
 		
-		<div id='opener'>
+		<div id='mobileMenu-opener'>
 			<div class='middle-bar'></div>
 		</div>	
 			
@@ -50,10 +50,10 @@ if(!is_front_page() && !is_search() && $src != null):?>
 	<div class="post-shadow">
 		<div class="post-content">
 			<div class="post-title">
-				<p><?= get_the_title();?></p>
+				<p class="backgroundCheck"><?= get_the_title();?></p>
 			</div>
 		</div>
 	</div>
-	<div class="post-image" style="background-image: url('<?php echo $src ?>');"></div>
+	<div class="post-image background-image" style="background-image: url('<?php echo $src ?>');"></div>
 </div>
 <?php endif ?>	

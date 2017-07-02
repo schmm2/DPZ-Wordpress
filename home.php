@@ -7,7 +7,8 @@ get_header();
     <div class="swiper-wrapper">
 					
 		<?php 
-		
+
+        $i = 0;
 		$youtubeAPI_key = "AIzaSyDGlj-Zm-zbBlh_wGXCz_lpDHhpSBzLIxQ";
 		
 		//***** show posts *****				
@@ -27,8 +28,13 @@ get_header();
 				if (strpos($post_url,'youtube.com') !== false) {
 			    	$format = 'youtube';
 			    	$videoId = youtube_id_from_url($post_url);		
-			    } 
-			    // Soundcloud
+			    }
+				// Youtube - short
+				if (strpos($post_url,'youtu.be') !== false) {
+					$format = 'youtube';
+					$videoId = youtube_id_from_url($post_url);
+				}
+				// Soundcloud
 			    else if (strpos($post_url,'soundcloud.com') !== false){
 				    $format = 'soundcloud';
 			    } 
@@ -36,21 +42,38 @@ get_header();
 			    else if (strpos($post_url,'vimeo.com') !== false){
 				    $format = 'vimeo';
 			    } 
-			}			
-			
-			echo "<div class='swiper-slide'>";	
-				// locate_template supports reuse of outer variables, get_template_part doesn't
-				include(locate_template('content-'.$format.'.php'));								
-			echo "</div>";
+			}
+            ?>
+
+            <div class='post swiper-slide'>
+
+            <?php
+
+                // locate_template supports reuse of outer variables, get_template_part doesn't
+                include(locate_template('content-'.$format.'.php'));
+
+                // first slide only
+                if($i == 0){
+
+                    ?>
+                        <div id='slideDown-container'><div id='slideDown'></div></div>
+                    <?php
+                }
+
+            ?>
+            </div>
+
+            <?php
+            $i++;
 
 		endwhile;
 		
 		dpz_pagination_nav();?>	
 		
 		<?php else:
-		//***** No posts yet *****	
-
+		//***** No posts yet *****
 		?>
+
 		<div class="post swiper-slide">
 			<div class="post-shadow">	
 				<div class='post-content backgroundCheck'>
@@ -62,11 +85,12 @@ get_header();
 			</div>			
 		</div>
 		<? endif ?>
-		
 	</div>
+
+    <div id="slider" class="arrow-top button">
+        <div id="slider-arrow"></div>
+    </div>
 </div>
-<div id="slider" class="arrow-top backgroundCheck bgBorderColor-second-hover">
-	<div id="slider-arrow"></div>
-</div>
+
 
 <?php get_footer(); ?>

@@ -1,14 +1,5 @@
 jQuery(document).ready(function($) {
-       	    
-    // check background image
-    if($('.background-image').length){
-	    BackgroundCheck.init(
-		{
-			targets: '.backgroundCheck', 
-			images: '.background-image'
-		});
-	}
-	
+
 	$('.project').on("click", function(){
 		var project_url = $(this).attr('data-project-url');		
 		Cookies.set('dpz-project',{offset: window.pageYOffset, url:window.location.href, ttl:1}, { expires: 1 });

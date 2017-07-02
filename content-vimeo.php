@@ -17,25 +17,24 @@
 	}
 ?>
 	
-<div class="player-vimeo post swiper-slide">
-	
+<div class="player-vimeo">
 	<!-- Post Text content -->
 	<div class="post-shadow">	
-		<div class='post-content backgroundCheck'>
-			<div class='post-title backgroundCheck'>
+		<div class='post-content'>
+			<div class='post-title'>
 				<p><?php the_title(); ?></p>
 			</div>
 			<div class="post-date"></div>
 			<div class='post-text'>							
 				<?php the_excerpt(); ?>
-				<button class="bgBorderColor-second-dark-hover button-play">Ansehen</button>
+				<button class="button-play button-colored backgroundCheck"/>
 			</div>
-		</div>	
+		</div>
 	</div>	
 	
 	<!-- Post Image -->	
 	<div class="post-image" style="background-image: url('<?php echo $src ?>')"></div>
-	
+
 	<!-- Player -->
 	<iframe id="player-vimeo-<?php echo get_the_id() ?>" class="player" src=<?php echo $api_url?> frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </div>

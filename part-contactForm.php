@@ -1,5 +1,4 @@
 <form class="contact-form clearfix" onsubmit="return false;">
-
     <div class="group">
         <input class="input-name" type="text" required>
         <span class="bar"></span>
@@ -15,5 +14,5 @@
         <textarea class="input-message" required></textarea>
         <label>Nachricht</label>
     </div>
-    <input class="buttonLink" value="Senden" type="submit" id="form-submit" />
+    <input class="button" value="Senden" type="submit" id="form-submit" />
 </form>

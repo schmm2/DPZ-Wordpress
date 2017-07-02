@@ -18,6 +18,10 @@
 		@extend %flexbox;
 		@extend %flexDirection-column;
 		@extend %justifyContent-center;
+
+		@media screen and (max-width: $break-small) {
+			padding: 7vw 7vw 9vw 7vw;
+		}
 	}
 
 	/***** Contact Form *****/

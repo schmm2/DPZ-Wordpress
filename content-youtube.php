@@ -24,25 +24,25 @@
 	}
 ?>
 	
-<div class="player-youtube  post swiper-slide">
+<div class="player-youtube">
 	
 	<!--- Post Text content --->
 	<div class="post-shadow">	
-		<div class='post-content backgroundCheck'>
-			<div class='post-title backgroundCheck'>
+		<div class='post-content'>
+			<div class='post-title'>
 				<p><?php the_title(); ?></p>
 			</div>
 			<div class="post-date"></div>
 			<div class='post-text'>							
 				<?php the_excerpt(); ?>
-				<button class="bgBorderColor-second-dark-hover button-play">Ansehen</i></button>
+				<button class="button-play button-colored"/>
 			</div>
-		</div>	
+		</div>
 	</div>
 	
 	<!-- Post Image backgroundCheck-image-->		
-	<div class='post-image' style="background-image: url(<?php echo $src ?>)"></div>		
-	
+	<div class='post-image' style="background-image: url(<?php echo $src ?>)"></div>
+
 	<!--  Player -->
 	<div id="player-youtube-<?php echo get_the_id() ?>" class="player" data-videoid="<?php echo $videoId ?>"></div>
 </div>

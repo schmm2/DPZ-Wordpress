@@ -1,23 +1,92 @@
 jQuery(document).ready(function($) {
-	
+
+    function isLocal(url) {
+        hostname = new RegExp(location.host);
+        return (hostname.test(url));
+    }
+
+	// calculates brightness of picture
+    function setImageBrightness(image) {
+
+        // extract image url
+    	var imageUrl = $(image).css('background-image');
+        imageUrl = /url\(([^\)]+)\)/.exec(imageUrl)[1];
+
+		var img = document.createElement("img");
+
+        // handle cors requests
+        if(isLocal(imageUrl)){
+            imageSrc =  imageUrl.replace(/"/g, '');
+
+        }else{
+            img.crossOrigin = "Anonymous";
+            imageSrc =  'https://crossorigin.me/' + imageUrl.replace(/"/g, '');
+
+		}
+
+        img.src = imageSrc;
+        img.style.display = "none";
+
+        img.onload=imageFound;
+        img.onerror=imageNotFound;
+
+
+        document.body.appendChild(img);
+
+        var colorSum = 0;
+        var brightness = 0;
+
+        function imageNotFound(){
+            $(image).parents('.post').addClass('background--light');
+		}
+
+        function imageFound(){
+        	// create canvas
+            var canvas = document.createElement("canvas");
+            canvas.width = this.width;
+            canvas.height = this.height;
+
+            var ctx = canvas.getContext("2d");
+            ctx.drawImage(this, 0, 0);
+
+            var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            var data = imageData.data;
+            var r, g, b, avg;
+
+            for (var x = 0, len = data.length; x < len; x += 4) {
+                r = data[x];
+                g = data[x + 1];
+                b = data[x + 2];
+
+                avg = Math.floor((r + g + b) / 3);
+                colorSum += avg;
+            }
+            brightness = Math.floor(colorSum / (this.width * this.height));
+
+            if(brightness > 200){
+                $(image).parents('.post').addClass('background--light');
+            } else if(brightness < 100){
+                $(image).parents('.post').addClass('background--dark');
+            } else{
+                $(image).parents('.post').addClass('background--complex');
+			}
+        }
+    }
+
+
+	$(".post-image").each(function(){
+        setImageBrightness(this);
+    });
+
+
 	var newsContainer = document.getElementById('news-container');
-	var hammertime = new Hammer(newsContainer);
-	
-	// brightness style adjustments
-	if($('.post-categories a').length){
-		$('.post-categories a').bgBrightness(180);
-	}
-	
-	// Todo
-	hammertime.on('swipe', function(ev) {
-	});	
-		
+
 	if (platform.os.family == 'iOS' && parseInt(platform.os.version, 10) >= 8) {   	
    		var newsContainerHeight = window.innerHeight - $("#nav-container").height();
    		$("#news-container").height(newsContainerHeight);
    	}
-	
-	// active Swiper H
+
+    // active Swiper H
 	var activeSwiperH = null;
 	 
 	var swiperV = new Swiper('.swiper-container', {
@@ -29,12 +98,12 @@ jQuery(document).ready(function($) {
         mousewheelForceToAxis: true,
         spaceBetween: 0,
         grabCursor: true,
-	    resistanceRatio: 0.85,
-	    slideActiveClass: 'swiperV-slide-active',
+	    resistanceRatio: 0.75,
+	    slideActiveClass: 'swiper-slide-active',
         keyboardControl: true,
         centeredSlides: true,
         onSlideChangeStart: function(swiper){
-			if(swiperV.isBeginning === false){
+        	if(swiperV.isBeginning === false){
 		        $('#slider').show();
 	        } else{
 		        $('#slider').hide();
@@ -43,9 +112,20 @@ jQuery(document).ready(function($) {
 			stop_players_vimeo();
 			stop_players_soundcloud();
 	    },
-        onSlideChangeEnd: function(swiper){ 
-	        BackgroundCheck.refresh();
-        },
+		onSlideChangeEnd: function(){
+            $('#slider').removeClass('background--dark');
+            $('#slider').removeClass('background--light');
+            $('#slider').removeClass('background--complex');
+
+        	// style slider-up according to background image
+            if($('.swiper-slide-active').hasClass('background--dark')){
+            	$('#slider').addClass('background--dark');
+			} else if($('.swiper-slide-active').hasClass('background--light')){
+                $('#slider').addClass('background--light');
+            } else if($('.swiper-slide-active').hasClass('background--complex')){
+                $('#slider').addClass('background--complex');
+            }
+		},
     });
 
 	// newsPost
@@ -72,16 +152,12 @@ jQuery(document).ready(function($) {
 			swiperV.slideTo(0);
 		}
 	});
-	
-	if($('.backgroundCheck-image').length){
-	    BackgroundCheck.init(
-		{
-			targets: '.backgroundCheck',
-			images: '.backgroundCheck-image'
-		});
-	}
-	
-	
+
+	$('#slideDown').on("click", function(){
+            swiperV.slideTo(1);
+    });
+
+
 	/* --- Youtube Player --- */
 	
 	// Youtube API
@@ -166,22 +242,29 @@ jQuery(document).ready(function($) {
 	var v = 0;
 	
 	$('.player-vimeo .player').each(function(){
-		player = $f(this);
+		player = new Vimeo.Player(this);
 		container = $(this).parent();
-		
-		player.addEvent('ready', function() {
-			player.addEvent('play', hide_videoOverlay);
-			player.addEvent('pause', show_postText);
-			player.addEvent('finish', show_videoOverlay);
-		});
+        playerId = this.id;
+
+        player.on('play', function() {
+            hide_videoOverlay(playerId);
+        });
+
+        player.on('pause', function() {
+            show_postText(playerId);
+        });
+
+        player.on('finish', function() {
+            show_videoOverlay(playerId);
+        });
 
 		$(container).find('.button-play').on("click", function(){
 			if (platform.os.family == 'iOS'){   	
-				hide_videoOverlay(player.element.id);
+				hide_videoOverlay(playerId);
    			}
    			// play video 
    			else{
-				player.api("play");
+				player.play();
 			}
 			
 		});
@@ -192,7 +275,7 @@ jQuery(document).ready(function($) {
 	function stop_players_vimeo(){
 		for(var i = 0; i < players_vimeo.length; i++){
 			//check state of video
-			players_vimeo[i].api("pause");
+			players_vimeo[i].pause();
 		}
 	}	
 	
@@ -221,8 +304,8 @@ jQuery(document).ready(function($) {
 		});		
 		
       	$(container).find('.button-play').on("click", function(){
-			if (platform.os.family == 'iOS'){   	
-				hide_videoOverlay(playerId);
+			if (platform.os.family == 'iOS'){
+                hide_videoOverlay(playerId);
 				$("#"+playerId).addClass('playing');
    			}
    			// play video 
@@ -230,8 +313,6 @@ jQuery(document).ready(function($) {
 				player.play();
 			}
 		});
-		
-		
 		players_soundcloud[s++] = player;
 	});
 	
@@ -247,16 +328,17 @@ jQuery(document).ready(function($) {
 	function hide_videoOverlay(id){
 		$("#"+id).siblings('.post-shadow').hide();
 		$("#"+id).siblings('.post-image').hide();
+        $('#slideDown').hide();
 	}
 	
 	function show_videoOverlay(id){
 		$("#"+id).siblings('.post-shadow').show();
 		$("#"+id).siblings('.post-image').show();
+        $('#slideDown').show();
 	}
 	
 	function show_postText(id){
 		$("#"+id).siblings('.post-shadow').show();
-	}	
+	}
+
 });
-
-

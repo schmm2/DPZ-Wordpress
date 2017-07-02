@@ -21,7 +21,7 @@
 		
 		<div id="site-overlay">
 			<!-- Site overlay -->
-			<div id="nav-mobile" class="bgColor-main">
+			<div id="nav-mobile" class="overlay">
 				<?php 
 					if(is_home() || is_search()) $search = '<li class="search-opener"><i class="fa fa-search"></i></li>';
 					
@@ -40,11 +40,28 @@
 					wp_nav_menu($options);	
 				?>
 			</div>
-			
-			<!-- Search field -->
-			<div id="search" class="bgColor-second">
-				<?php get_search_form(); ?>
-			</div>		
+
+
+            <!-- Search field -->
+            <div id="search" class="overlay">
+                <div id="search-container">
+                    <?php get_search_form(); ?>
+
+                    <!-- Categories -->
+                    <div id="categories">
+                        <ul>
+                            <?php wp_list_categories(
+                                array(
+                                    'orderby'    => 'name',
+                                    'title_li'  => ''
+                                ) );
+                            ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
 		</div>
 		
 		<!-- Site Content -->

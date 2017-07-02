@@ -1,6 +1,13 @@
 jQuery(document).ready(function($) {
-    
-	/* Bugfill */
+
+
+    BackgroundCheck.init({
+        targets: '.backgroundCheck',
+        images: '.background-image'
+    });
+
+
+    /* Bugfill */
    	viewportUnitsBuggyfill.init({hacks: window.viewportUnitsBuggyfillHacks});
   
 	var didScroll = false;	

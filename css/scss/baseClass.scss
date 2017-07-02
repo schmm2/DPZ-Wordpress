@@ -98,6 +98,12 @@
 
 // Elements
 
+@mixin circle($radius){
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
 %button{
 	margin-top: 40px;
 	display: inline-block;
@@ -109,8 +115,8 @@
 	cursor: pointer;
 	padding: 6px 15px 6px 15px;
 
-	@include transition-duration(0.2s);
-	@include transition-property(background, border);  
+	@include transition-duration(0.3s);
+	@include transition-property(background, border, color);
 }
 
 // Image
@@ -227,4 +233,38 @@
 }
 
 
+// horizontal center
+%center-horizontal{
+	position: absolute;
+	left: 50%;
 
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+
+
+@-webkit-keyframes bounceArrow {
+	0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+	40% {-webkit-transform: translateY(-20px);}
+	60% {-webkit-transform: translateY(-5px);}
+}
+
+@-moz-keyframes bounceArrow {
+	0%, 20%, 50%, 80%, 100% {-moz-transform: translateY(0);}
+	40% {-moz-transform: translateY(-20px);}
+	60% {-moz-transform: translateY(-5px);}
+}
+
+@-o-keyframes bounceArrow {
+	0%, 20%, 50%, 80%, 100% {-o-transform: translateY(0);}
+	40% {-o-transform: translateY(-20px);}
+	60% {-o-transform: translateY(-5px);}
+}
+@keyframes bounceArrow {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-20px);}
+	60% {transform: translateY(-5px);}
+}

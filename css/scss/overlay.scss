@@ -11,8 +11,7 @@
 
 #site-overlay{
 	position: absolute;
-	
-	background-color: black;
+
 	visibility: hidden;
 	
 	width: 100%;
@@ -65,41 +64,61 @@
 
 
 /********** Search **********/
-#search{
-	
+#search {
 	z-index: 900;
-	
-	#search-form{
 
-		@include positionCenter(-50%,-50%);	
+	#search-container{
 
-		#search-input{
-			
-			background-color: transparent;
-			border: none;
-			border-bottom: 1px white solid;
-			font-size: 3.5vmax;	
-			color: white;
-			padding-left: 0px;	
-			
-			&::-webkit-input-placeholder {
-				color: #ffffff;
-			}
-		
-			&:-moz-placeholder { /* Firefox 18- */
-			   color: #ffffff; 
-			}
-			
-			&::-moz-placeholder {  /* Firefox 19+ */
-			   color: #ffffff;
-			}
-			
-			&:-ms-input-placeholder {  
-			   color: #ffffff;
+		@include positionCenter(-50%, -50%);
+
+		#search-form {
+
+			margin-bottom: 50px;
+
+			#search-input {
+
+				background-color: transparent;
+				border: none;
+				border-bottom: 1px white solid;
+				font-size: 3.5vmax;
+				color: white;
+				padding-left: 0px;
+				min-width: 100%;
+
+				&::-webkit-input-placeholder {
+					color: #ffffff;
+				}
+
+				&:-moz-placeholder { /* Firefox 18- */
+					color: #ffffff;
+				}
+
+				&::-moz-placeholder { /* Firefox 19+ */
+					color: #ffffff;
+				}
+
+				&:-ms-input-placeholder {
+					color: #ffffff;
+				}
 			}
 		}
-	}	
+
+		#categories{
+			li{
+				@extend %button;
+				border: 1px solid;
+				margin-right: 25px;
+				font-weight: 400;
+
+				border-color: white;
+				a{
+					color: white !important;
+				}
+			}
+		}
+	}
 }
+
 
 /********** Post Overlay **********/
 #post-overlay{

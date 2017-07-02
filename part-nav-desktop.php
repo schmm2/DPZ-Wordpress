@@ -1,6 +1,6 @@
-<div class="nav-container">
+<div id="nav-container">
 
-	<div class="nav-content">
+	<div id="nav-content">
 	
 		<?php get_template_part('part','logo'); ?>  
 		
@@ -21,13 +21,14 @@
 			    );
 			    wp_nav_menu($options);	
 			?>
-			<div class='search-opener'>
+			<div id='search-opener'>
 				<i class="fa fa-search"></i>
 			</div>
+            <div id='search-closer'></div>
 		</div>
 		
-		<div id='opener'>
-			<div class='middle-bar'></div>
+		<div id='mobileMenu-opener'>
+			<div id='middle-bar'></div>
 		</div>	
 			
 	</div>

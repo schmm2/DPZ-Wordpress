@@ -67,7 +67,6 @@ $offersCategory_topLevel = get_terms( array(
 		    $query = new WP_Query( $args );
 
 
-
 		    echo '<div class="subcategorie">';
 		    echo ("<h3>".$subcategorie->name."</h3>");
 
@@ -76,7 +75,6 @@ $offersCategory_topLevel = get_terms( array(
 
                     $price  = get_post_meta( get_the_id(), '_dpz_offer_price', true );
                     ?>
-
                         <div class="offer">
                             <div class="text-container">
                                 <p class="offer-title"><? the_title() ?></p>

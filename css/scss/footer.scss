@@ -53,6 +53,10 @@
 			@media screen and (max-width: $break-small) {
 				@include flex-basis(100%);
 			}
+
+			p{
+				font-size: 2rem;
+			}
 		}
 
 		#socialMedia{
