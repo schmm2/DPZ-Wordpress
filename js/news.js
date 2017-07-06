@@ -63,9 +63,9 @@ jQuery(document).ready(function($) {
             }
             brightness = Math.floor(colorSum / (this.width * this.height));
 
-            if(brightness > 200){
+            if(brightness > 180){
                 $(image).parents('.post').addClass('background--light');
-            } else if(brightness < 100){
+            } else if(brightness < 120){
                 $(image).parents('.post').addClass('background--dark');
             } else{
                 $(image).parents('.post').addClass('background--complex');
@@ -329,12 +329,14 @@ jQuery(document).ready(function($) {
 		$("#"+id).siblings('.post-shadow').hide();
 		$("#"+id).siblings('.post-image').hide();
         $('#slideDown').hide();
+        $('#slider').hide();
 	}
 	
 	function show_videoOverlay(id){
 		$("#"+id).siblings('.post-shadow').show();
 		$("#"+id).siblings('.post-image').show();
         $('#slideDown').show();
+        $('#slider').show();
 	}
 	
 	function show_postText(id){

@@ -7,7 +7,7 @@
 		<div id="nav-desktop">
 			
 			<?php 
-				if(is_home() || is_search()) $search = '<li class="search-opener"><i class="fa fa-search"></i></li>';
+				if(is_home() || is_search() || is_category()) $search = '<li class="search-opener"><i class="fa fa-search"></i></li>';
 				
 				$options =  array(
 				'echo'              => true,
@@ -44,7 +44,7 @@ else{
 	$src = get_header_image();
 }				
 
-if(!is_front_page() && !is_search() && $src != null):?>
+if(!is_front_page() && !is_search() && !is_category() && $src != null):?>
 <!-- Header Image -->
 <div id="header-image">
 	<div class="post-shadow">

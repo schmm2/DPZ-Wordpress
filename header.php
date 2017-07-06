@@ -23,7 +23,7 @@
 			<!-- Site overlay -->
 			<div id="nav-mobile" class="overlay">
 				<?php 
-					if(is_home() || is_search()) $search = '<li class="search-opener"><i class="fa fa-search"></i></li>';
+					if(is_home() || is_search() || is_category()) $search = '<li class="search-opener"><i class="fa fa-search"></i></li>';
 					
 					$options =  array(
 						'echo'              => true,
@@ -45,7 +45,7 @@
             <!-- Search field -->
             <div id="search" class="overlay">
                 <div id="search-container">
-                    <?php get_search_form(); ?>
+                    <?php get_template_part('part-searchform') ?>
 
                     <!-- Categories -->
                     <div id="categories">

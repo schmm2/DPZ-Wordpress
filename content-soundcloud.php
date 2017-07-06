@@ -17,7 +17,16 @@
 <div class="player-soundcloud">
 	
 	<!-- Post Text content -->
-	<div class="post-shadow">	
+	<div class="post-shadow">
+        <div class="post-categories">
+			<?php
+			$categories = get_the_category();
+			foreach($categories as $category){
+				$category_link = get_category_link($category->cat_ID);
+				echo '<a href="'.$category_link.'" class="categorie">'.$category->name."</a>";
+			}
+			?>
+        </div>
 		<div class='post-content'>
 			<div class='post-title'>
 				<p><?php the_title(); ?></p>

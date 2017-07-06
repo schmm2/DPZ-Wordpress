@@ -14,12 +14,12 @@ $gutterSize: 1.5vw;
 .project{
 	overflow: hidden;
 	margin-bottom: $gutterSize;
-	
+
 	.background{
 		height: 100%;
 		@extend %bgCover;
 	}
-	
+
 	.title{
 		@include positionCenter(-50%,-50%);
 		font-family: $font-oswald;
@@ -28,7 +28,7 @@ $gutterSize: 1.5vw;
 		font-size: 4rem;
 		text-align: center;
 	}
-	
+
 	.text{
 		display: none;
 	}
@@ -39,7 +39,7 @@ $gutterSize: 1.5vw;
 }
 
 .grid-gutter-sizer{
-	width: $gutterSize;	
+	width: $gutterSize;
 }
 
 .teamMember{

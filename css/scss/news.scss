@@ -239,7 +239,8 @@ html, body{
     .post-content{
 
         .post-title{
-            p{
+
+          p{
                 @media screen and (max-width: $break-small){
                     font-size: 11vw;
                 }
@@ -297,6 +298,14 @@ html, body{
       color: white;
       border-color: white;
     }
+
+    .post-title{
+      text-shadow: 0px 0px 60px #686868;
+    }
+
+    .post-text{
+      text-shadow: 0px 0px 30px #000000;
+    }
   }
 
   &.background--dark {
@@ -307,6 +316,14 @@ html, body{
     .categorie{
       color: white;
       border-color: white;
+    }
+
+    .post-title{
+      text-shadow: 0px 0px 60px #686868;
+    }
+
+    .post-text{
+      text-shadow: 0px 0px 30px #000000;
     }
   }
 

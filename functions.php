@@ -377,8 +377,9 @@ function activate_script() {
 	    wp_register_style( 'offers', get_template_directory_uri().'/css/offers.css' );
 	    wp_enqueue_style( 'offers' );
 	}
-	
-	if(is_home() || is_search() ){
+
+	// fullscreen news section
+	if(is_home() || is_search() || is_category() ){
 				
 	    wp_register_style( 'news', get_template_directory_uri().'/css/news.css' );
 	    wp_enqueue_style( 'news' );
@@ -403,7 +404,7 @@ function activate_script() {
 	}	
 	
 	// Footer loaded
-	if(!is_home()){
+	if(!is_home() && !is_search() && !is_category()){
 		wp_enqueue_script( 'contactForm', get_template_directory_uri().'/js/contactForm.js', array( 'jquery'));
 		wp_enqueue_script( 'jsRender', get_template_directory_uri().'/js/jsrender.min.js', array( 'jquery'));
  			
@@ -426,38 +427,48 @@ add_action( 'wp_enqueue_scripts', 'activate_script' );
 
 /***** Excerpt ******/
 function custom_wp_trim_excerpt($text) { // Fakes an excerpt if needed
-  	global $post;
-  	if ( '' == $text ) {
-		$text = get_the_content('');
-	    $text = apply_filters('the_content', $text);
-	    $text = str_replace('\]\]\>', ']]&gt;', $text);
-	    $text = strip_tags($text, '');
-	    $text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
-	    $excerpt_length_long = 9;
-	    $excerpt_length_short = 5;
-	    
-	    // buts the words which exceed the maximum in the last element
-	    $words_long = explode(' ', $text, $excerpt_length_long + 1);
-	    $words_short = explode(' ', $text, $excerpt_length_short + 1);
-	    
-	    // long excerpt text
-	    if (count($words_long)> $excerpt_length_long) {
-	      array_pop($words_long);
-	      array_push($words_long, ' ...');
-	      $text_long = implode(' ', $words_long);
-	    }
-	    
-	    // short excerpt text
-	    if (count($words_short)> $excerpt_length_short) {
-	      array_pop($words_short);
-	      array_push($words_short, ' ...');
-	      $text_short = implode(' ', $words_short);
-	    }
-  }
-  // add read more button
-  $html = '<div class="excerpt-long"><p>'.$text_long.'</p></div>
+	global $post;
+	$more_index = strpos( $post->post_content, '<!--more-->' );
+
+	$text = get_the_content('');
+	$text = apply_filters('the_content', $text);
+	$text = str_replace('\]\]\>', ']]&gt;', $text);
+	$text = strip_tags($text, '');
+	$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+
+    // more tag found
+	if($more_index > 0){
+        // more tag found
+		$text_short = $text;
+        $text_long = $text_short;
+    }
+    // no more tag
+	else {
+		$excerpt_length_long = 9;
+		$excerpt_length_short = 5;
+
+		// buts the words which exceed the maximum in the last element
+		$words_long = explode(' ', $text, $excerpt_length_long + 1);
+		$words_short = explode(' ', $text, $excerpt_length_short + 1);
+
+		// long excerpt text
+		if (count($words_long)> $excerpt_length_long) {
+			array_pop($words_long);
+			array_push($words_long, ' ...');
+			$text_long = implode(' ', $words_long);
+		}
+
+		// short excerpt text
+		if (count($words_short)> $excerpt_length_short) {
+			array_pop($words_short);
+			array_push($words_short, ' ...');
+			$text_short = implode(' ', $words_short);
+		}
+	}
+	// add read more button
+	$html = '<div class="excerpt-long"><p>'.$text_long.'</p></div>
   		  <div class="excerpt-short"><p>'.$text_short.'</p></div>';
-  return $html;
+	return $html;
 }
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'custom_wp_trim_excerpt');
