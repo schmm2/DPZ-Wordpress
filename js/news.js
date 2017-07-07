@@ -80,11 +80,35 @@ jQuery(document).ready(function($) {
 
 
 	var newsContainer = document.getElementById('news-container');
+	var resizeHeight = false;
 
-	if (platform.os.family == 'iOS' && parseInt(platform.os.version, 10) >= 8) {   	
-   		var newsContainerHeight = window.innerHeight - $("#nav-container").height();
-   		$("#news-container").height(newsContainerHeight);
-   	}
+    // browser troubleshooting
+
+    // Chrome
+    var isChromium = window.chrome,
+        winNav = window.navigator,
+        vendorName = winNav.vendor,
+        isOpera = winNav.userAgent.indexOf("OPR") > -1,
+        isIEedge = winNav.userAgent.indexOf("Edge") > -1,
+        isIOSChrome = winNav.userAgent.match("CriOS");
+
+    if(isIOSChrome){
+        // is Google Chrome on IOS
+        resizeHeight = true;
+    } else if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+        // is Google Chrome
+        resizeHeight = true;
+    }
+
+    // iOS
+    if (platform.os.family == 'iOS' && parseInt(platform.os.version, 10) >= 8) {
+        resizeHeight = true;
+    }
+
+    if(resizeHeight == true){
+        var newsContainerHeight = window.innerHeight - $("#nav-container").height();
+        $("#news-container").height(newsContainerHeight);
+	}
 
     // active Swiper H
 	var activeSwiperH = null;

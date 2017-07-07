@@ -15,7 +15,4 @@ jQuery(document).ready(function($) {
         $(this).addClass('active');
         $(category_id).addClass('active');
     });
-
-
-
 });

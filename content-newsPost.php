@@ -22,9 +22,7 @@ $postBg = get_postBg($post->ID);
             </div>
             <div class="post-date"></div>
             <div class='post-text'>
-                <?php
-                    the_excerpt();
-                ?>
+                <?php the_excerpt();?>
                  <button data-post-url="<?= get_permalink();?>" class="button-readmore button-colored">Weiterlesen</button>
             </div>
         </div>

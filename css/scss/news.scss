@@ -329,11 +329,26 @@ html, body{
 
 }
 
-.player-soundcloud{
-	.player{
-		@include blur(5px);		
-		&.playing{
-			@include blur(0px);
-		}
-	}
+.player-soundcloud {
+  .player {
+    @include blur(4px);
+    &.playing {
+      @include blur(0px);
+    }
+  }
 }
+
+/*
+// Blur Background
+.player-youtube{
+  .post-image{
+    @include blur(4px);
+  }
+}
+
+.player-vimeo{
+  .post-image{
+    @include blur(4px);
+  }
+}
+*/

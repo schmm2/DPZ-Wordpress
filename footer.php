@@ -69,12 +69,12 @@
             <div id="adress">
                 <h3>Addresse</h3>
                 <p>
-                    <?php echo $title ?></br>
-                    <?php echo $street ?></br>
-                    <?php echo $city ?></br>
+                    <?php echo $title ?><br>
+                    <?php echo $street ?><br>
+                    <?php echo $city ?><br>
                 </p>
                 <p>
-                    Telefon: <? echo $phone ?></br>
+                    Telefon: <? echo $phone ?><br>
                     E-Mail: <? echo $email ?>
                 </p>
             </div>
@@ -87,7 +87,6 @@
             <?php endif; ?>
         </div>
     <?php endif ?>
-</div>
 </div>
 </body>
 </html>

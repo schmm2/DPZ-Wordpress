@@ -35,8 +35,8 @@
 			</div>
 			<div class="post-date"></div>
 			<div class='post-text'>							
-				<?php the_excerpt(); ?>
-				<button class="button-play button-colored backgroundCheck"/>
+				<?php the_excerpt();?>
+                <button class="button-play button-colored backgroundCheck"></button>
 			</div>
 		</div>
 	</div>	

@@ -59,7 +59,6 @@ jQuery(document).ready(function($) {
 										
 					switch(serverMsg['code']){
 						case false:
-						    console.log("ERRROR");
 						    color = 'text-alert';
 							msg = 'Nachricht konnte nicht übermittelt werden';
 							break;

@@ -63,18 +63,6 @@
   margin-top: 80px;
 }
 
-/********** Site structure **********/
-
-#site-content{
-  z-index: 1;
-  position: relative;
-}
-
-/********** Form **********/
-
-
-
-
 /********** Header **********/
 
 #nav-container{
@@ -89,13 +77,13 @@
 }
 
 #nav-desktop{
-  #search-opener{
+  .search-opener{
     margin-left: 4vmax;
   }
 }
 
 
-#search-opener, #mobileMenu-opener{
+.search-opener, #mobileMenu-opener{
   &:hover{
     cursor: pointer;
   }
@@ -177,47 +165,42 @@
 }
 
 
-
-
 .nav-content{
   margin-left: 3vmax;
   margin-right: 3vmax;
+  height: 100%;
+  padding: 10px 0px 10px 0px;
 
   @extend %flexbox;
   @extend %justifyContent-spaceBetween;
   @extend %alignItems-center;
 
-  height: 100%;
+  .logo-link {
 
-  #logo{
-    height: 60%;
+    @extend %flexbox;
+    @extend %flexDirection-row;
+    height: 50px;
 
-    .logo-link {
-      @extend %flexbox;
-      @extend %flexDirection-row;
+    img{
+      margin-right: 20px;
+      display: inline;
       max-height: 100%;
+    }
 
-      .logo-img{
-        margin-right: 20px;
+    #logo-siteName {
+      font-family: $font-oswald;
+      color: $color-greyVeryDark;
+      font-size: 3rem;
+      margin: 0px;
+      display: inline-block;;
 
-        img {
-          max-height: 100%;
-        }
-      }
-
-      #logo-siteName {
-        font-family: $font-oswald;
-        color: $color-greyVeryDark;
-        font-size: 3rem;
-        margin: 0px;
-
-        @media screen and (max-width: $break-small) {
-          display: none;
-        }
+      @media screen and (max-width: $break-small) {
+        display: none;
       }
     }
   }
 }
+
 
 #nav-desktop{
   @extend %flexbox;

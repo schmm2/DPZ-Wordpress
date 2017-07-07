@@ -33,8 +33,8 @@
 			</div>
 			<div class="post-date"></div>
 			<div class='post-text'>							
-				<?php the_excerpt(); ?>
-				<button class="button-play button-colored" />
+				<?php the_excerpt();?>
+                <button class="button-play button-colored"></button>
 			</div>
 		</div>
 	</div>

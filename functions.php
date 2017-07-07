@@ -2,6 +2,13 @@
 
 require_once 'php/post-bg-helper.php';
 
+/***** Disable Jquery migrate *****/
+add_action( 'wp_default_scripts', function( $scripts ) {
+	if ( ! empty( $scripts->registered['jquery'] ) ) {
+		$scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
+	}
+} );
+
 /***** Pagination *****/
 
 add_filter('next_posts_link_attributes', 'posts_link_attributes');
@@ -174,7 +181,7 @@ add_action( 'wp_head', 'dpz_customizer_css' );
 function dpz_register_theme_customizer( $wp_customize ) {
  
  	/* Colors */	
- 	define( 'NO_HEADER_TEXT', true );
+ 	//define( 'NO_HEADER_TEXT', true );
 
  	// Footer
 	$wp_customize->add_setting(
@@ -406,7 +413,6 @@ function activate_script() {
 	// Footer loaded
 	if(!is_home() && !is_search() && !is_category()){
 		wp_enqueue_script( 'contactForm', get_template_directory_uri().'/js/contactForm.js', array( 'jquery'));
-		wp_enqueue_script( 'jsRender', get_template_directory_uri().'/js/jsrender.min.js', array( 'jquery'));
  			
  		wp_register_style( 'footer', get_template_directory_uri().'/css/footer.css' );
  		wp_enqueue_style( 'footer' );
@@ -435,6 +441,9 @@ function custom_wp_trim_excerpt($text) { // Fakes an excerpt if needed
 	$text = str_replace('\]\]\>', ']]&gt;', $text);
 	$text = strip_tags($text, '');
 	$text = preg_replace('@<script[^>]*?>.*?</script>@si', '', $text);
+
+	$text_short = "";
+	$text_long = "";
 
     // more tag found
 	if($more_index > 0){
@@ -867,7 +876,7 @@ add_action('init','add_offer_taxonomy_to_post', 0);
 class dpz_socialLink_walker_nav_menu extends Walker_Nav_Menu {
 	  
 	// add main/sub classes to li's and links
-	function start_el( &$output, $item, $depth, $args ) {
+	function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0  ) {
 	    global $wp_query;
 	    $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
 	  
