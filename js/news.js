@@ -92,12 +92,15 @@ jQuery(document).ready(function($) {
         isIEedge = winNav.userAgent.indexOf("Edge") > -1,
         isIOSChrome = winNav.userAgent.match("CriOS");
 
+    // is Google Chrome on IOS
     if(isIOSChrome){
-        // is Google Chrome on IOS
         resizeHeight = true;
-    } else if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
-        // is Google Chrome
-        resizeHeight = true;
+    }
+    // is Google Chrome on Android
+    else if(isChromium !== null && isChromium !== undefined && vendorName === "Google Inc." && isOpera == false && isIEedge == false) {
+        if (platform.os.family == 'Android') {
+            resizeHeight = true;
+        }
     }
 
     // iOS

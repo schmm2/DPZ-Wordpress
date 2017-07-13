@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
 	function navMobile_fadeOut(){
 		$('#nav-mobile').addClass('fadeOut').delay(600).queue(function(next){
 			$('#nav-mobile').removeClass('fadeOut');	
-			$('#nav-mobile').removeClass('show');			
+			$('#nav-mobile').removeClass('show');
 			next();
 		});		
 	}	
@@ -66,28 +66,32 @@ jQuery(document).ready(function($) {
 	/***** Search ******/
 	function search_fadeIn(){
 		$('#search').addClass('show');
+        // show search icon
+        $('#search-control').addClass('open');
 		$('#search-input').focus();
 	}
 	
 	function search_fadeOut(){
 		$('#search').removeClass('show');
-	}	
-	    
-	$('.search-opener').on("click", function(){
-		if($('#search').hasClass('show')){
-			// hide search
-			search_fadeOut();
-			enable_scroll();			
-		} else{
-			// hide nav-mobile if shown
-			navMobile_fadeOut();
-			search_fadeIn();	
-			disable_sroll();	
-		}
-	});
+        // show close icon
+        $('#search-control').removeClass('open');
+	}
+
+    $('#search-control').on("click", function() {
+        if($(this).hasClass('open')){
+            // hide search
+            search_fadeOut();
+            enable_scroll();
+        } else {
+            // show search
+            navMobile_fadeOut();
+            search_fadeIn();
+            disable_sroll();
+        }
+    });
+
 	
 	// Window Size
-	
 	// check if mobile navigation is still active while screen size is bigger than x
 	$( window ).resize(function() {
 		if($(window).width() > 1100){

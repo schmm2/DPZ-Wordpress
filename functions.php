@@ -2,13 +2,6 @@
 
 require_once 'php/post-bg-helper.php';
 
-/***** Disable Jquery migrate *****/
-add_action( 'wp_default_scripts', function( $scripts ) {
-	if ( ! empty( $scripts->registered['jquery'] ) ) {
-		$scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
-	}
-} );
-
 /***** Pagination *****/
 
 add_filter('next_posts_link_attributes', 'posts_link_attributes');

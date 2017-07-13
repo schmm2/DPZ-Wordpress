@@ -45,7 +45,6 @@ jQuery(document).ready(function($) {
 	
 	
 	// Search
-	
 	function search_fadeIn(){
 		$('#search').addClass('show');
 		$('#search-input').focus();
@@ -58,9 +57,10 @@ jQuery(document).ready(function($) {
 	}	
 	    
 	$('.search-opener').on("click", function(){
-		if($('#search').hasClass('show')){
+	    console.log("HELLO");
+	    if($('#search').hasClass('show')){
 			// hide search
-			search_fadeOut();			
+			search_fadeOut();
 		} else{
 			navMobile_fadeOut();
 			search_fadeIn();		
@@ -68,7 +68,6 @@ jQuery(document).ready(function($) {
 	});
 	
 	// Window Size
-	
 	// check if mobile navigation is still active while screen size is bigger than x
 	$( window ).resize(function() {
 		if($(window).width() > 1100){
@@ -78,7 +77,4 @@ jQuery(document).ready(function($) {
 			}		
 		}
 	});
-
-
-	
 });

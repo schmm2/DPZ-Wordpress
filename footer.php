@@ -20,7 +20,7 @@
 
     endforeach;
 
-    if(!is_home() && !is_search()):?>
+    if(!is_home() && !is_search() && !is_category()):?>
 
         <div id='footer-content' class='content-center'>
             <div id="sites">

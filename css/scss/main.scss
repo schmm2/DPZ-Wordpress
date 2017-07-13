@@ -65,25 +65,25 @@
 
 /********** Header **********/
 
-#nav-container{
-  width: 100%;
-  height: 80px;
 
-  z-index: 2000000;
+#search-control{
+  margin-left: 2vmax;
+  height: 30px;
+  width: 30px;
+  margin-top: 2px;
+  background-image: url("img/search.jpg");
+  background-size: cover;
 
-  @media screen and (max-height: $break-small){
-    height: 60px;
+  @include transition-property(background-image);
+  @include transition-duration(0.1s);
+
+  &.open{
+    background-image: url("img/close.jpg");
   }
 }
 
-#nav-desktop{
-  .search-opener{
-    margin-left: 4vmax;
-  }
-}
 
-
-.search-opener, #mobileMenu-opener{
+#search-control, #mobileMenu-opener{
   &:hover{
     cursor: pointer;
   }
@@ -164,6 +164,21 @@
   }
 }
 
+#nav-container{
+  width: 100%;
+  height: 80px;
+
+  z-index: 2000000;
+
+  @media screen and (max-height: $break-small){
+    height: 60px;
+
+    .logo-link{
+      height: 40px;
+    }
+
+  }
+}
 
 .nav-content{
   margin-left: 3vmax;

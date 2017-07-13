@@ -73,15 +73,11 @@
                 <div id="nav-desktop">
 
 					<?php
-					$search = "";
-					if(is_home() || is_search() || is_category()){
-						$search = '<li class="search-opener"><i class="fa fa-search"></i></li>';
-					}
 
 					$options =  array(
 						'echo'              => true,
 						'theme_location'    => 'nav-header',
-						'items_wrap'        => '<ul id="%1$s">%3$s'.$search.' </ul>',
+						'items_wrap'        => '<ul id="%1$s">%3$s</ul>',
 						'menu_class'        => false,
 						'menu_id'           => false,
 						'container'         => false,
@@ -91,6 +87,11 @@
 						'after'             => false
 					);
 					wp_nav_menu($options);
+
+
+                    if(is_home() || is_search() || is_category()){
+                        echo('<div id="search-control"></div>');
+                    }
 					?>
                 </div>
 
